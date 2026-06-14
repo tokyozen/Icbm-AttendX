@@ -1,0 +1,220 @@
+import { redirect } from "next/navigation";
+import Link from "next/link";
+import { auth } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
+import { formatDate, formatDateTime, formatTime } from "@/lib/utils";
+import ExportSessionButtons from "@/components/reports/ExportSessionButtons";
+
+export const dynamic = "force-dynamic";
+
+export default async function SessionReportPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const session = await auth();
+  if (!session?.user) redirect("/login");
+
+  const { id } = await params;
+  const role = (session.user as { role?: string }).role ?? "";
+  const userId = session.user.id as string;
+
+  const trainingSession = await prisma.trainingSession.findUnique({
+    where: { id },
+    include: {
+      instructor: { select: { name: true } },
+      attendanceRecords: {
+        orderBy: { checkInTime: "asc" },
+      },
+    },
+  });
+
+  if (!trainingSession) redirect("/sessions");
+
+  // INSTRUCTOR can only see their own sessions
+  if (role === "INSTRUCTOR" && trainingSession.instructorId !== userId) {
+    redirect("/sessions");
+  }
+
+  // Total registered students for this track + location
+  const totalRegistered = await prisma.student.count({
+    where: {
+      learningTrack: trainingSession.learningTrack,
+      trainingLocation: trainingSession.location,
+      isActive: true,
+    },
+  });
+
+  const checkedIn = trainingSession.attendanceRecords.length;
+  const attendanceRate =
+    totalRegistered > 0
+      ? `${((checkedIn / totalRegistered) * 100).toFixed(1)}%`
+      : "N/A";
+
+  const duration =
+    trainingSession.endedAt
+      ? Math.round(
+          (trainingSession.endedAt.getTime() - trainingSession.startedAt.getTime()) / 60_000
+        )
+      : Math.round(
+          (trainingSession.expiresAt.getTime() - trainingSession.startedAt.getTime()) / 60_000
+        );
+
+  return (
+    <div className="p-6 lg:p-8 max-w-7xl mx-auto">
+      {/* Breadcrumb */}
+      <div className="flex items-center gap-2 mb-6 text-sm flex-wrap">
+        <Link href="/sessions" style={{ color: "#64748b" }}>Sessions</Link>
+        <span style={{ color: "#E2E8F0" }}>/</span>
+        <Link href={`/sessions/${id}`} style={{ color: "#64748b" }}>
+          {trainingSession.sessionName}
+        </Link>
+        <span style={{ color: "#E2E8F0" }}>/</span>
+        <span className="font-medium" style={{ color: "#0F1E35" }}>Report</span>
+      </div>
+
+      {/* Session details header */}
+      <div className="bg-white rounded-xl border p-6 mb-5" style={{ borderColor: "#E2E8F0" }}>
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+          <div>
+            <h1 className="text-xl font-bold mb-1" style={{ color: "#0F1E35" }}>
+              {trainingSession.sessionName}
+            </h1>
+            <p className="text-sm" style={{ color: "#64748b" }}>
+              Code: <span className="font-mono font-semibold">{trainingSession.sessionCode}</span>
+            </p>
+          </div>
+          <StatusChip status={trainingSession.status} />
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <DetailItem label="Location" value={trainingSession.location} />
+          <DetailItem label="Learning Track" value={trainingSession.learningTrack} />
+          <DetailItem label="Instructor" value={trainingSession.instructor.name} />
+          <DetailItem label="Duration" value={`${duration} min`} />
+          <DetailItem label="Started" value={formatDate(trainingSession.startedAt)} />
+          <DetailItem label="Start Time" value={formatTime(trainingSession.startedAt)} />
+          <DetailItem
+            label={trainingSession.status === "CLOSED" ? "Ended" : "Scheduled End"}
+            value={formatTime(trainingSession.expiresAt)}
+          />
+          <DetailItem label="Date" value={formatDate(trainingSession.startedAt)} />
+        </div>
+      </div>
+
+      {/* Summary stats */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
+        <StatCard label="Students Checked In" value={String(checkedIn)} color="#0E7C7B" />
+        <StatCard label="Total Registered (Track+Location)" value={String(totalRegistered)} color="#0F1E35" />
+        <StatCard label="Attendance Rate" value={attendanceRate} color="#C9922A" />
+      </div>
+
+      {/* Export + Table */}
+      <div className="bg-white rounded-xl border overflow-hidden" style={{ borderColor: "#E2E8F0" }}>
+        <div
+          className="px-6 py-4 border-b flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+          style={{ borderColor: "#E2E8F0" }}
+        >
+          <h2 className="font-semibold" style={{ color: "#0F1E35" }}>
+            Attendance Records ({checkedIn})
+          </h2>
+          <ExportSessionButtons sessionId={id} sessionName={trainingSession.sessionName} />
+        </div>
+
+        {checkedIn === 0 ? (
+          <div className="py-16 text-center">
+            <p className="text-sm" style={{ color: "#94a3b8" }}>
+              No students checked in for this session.
+            </p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr style={{ backgroundColor: "#F5F6FA", borderBottom: "1px solid #E2E8F0" }}>
+                  {["#", "Full Name", "Application ID", "Gender", "Check-In Time", "Device"].map((h) => (
+                    <th
+                      key={h}
+                      className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide whitespace-nowrap"
+                      style={{ color: "#64748b" }}
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {trainingSession.attendanceRecords.map((r, i) => (
+                  <tr
+                    key={r.id}
+                    style={{ borderBottom: i < checkedIn - 1 ? "1px solid #F1F5F9" : "none" }}
+                  >
+                    <td className="px-4 py-3 text-xs" style={{ color: "#94a3b8" }}>
+                      {i + 1}
+                    </td>
+                    <td className="px-4 py-3 font-medium whitespace-nowrap" style={{ color: "#0F1E35" }}>
+                      {r.fullName}
+                    </td>
+                    <td className="px-4 py-3 font-mono text-xs whitespace-nowrap" style={{ color: "#0E7C7B" }}>
+                      {r.applicationId}
+                    </td>
+                    <td className="px-4 py-3 text-xs" style={{ color: "#475569" }}>
+                      {r.gender}
+                    </td>
+                    <td className="px-4 py-3 text-xs whitespace-nowrap" style={{ color: "#475569" }}>
+                      {formatDateTime(r.checkInTime)}
+                    </td>
+                    <td className="px-4 py-3 text-xs" style={{ color: "#64748b" }}>
+                      {r.deviceType ?? "—"}
+                      {r.browser ? ` / ${r.browser}` : ""}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function StatusChip({ status }: { status: string }) {
+  const map: Record<string, { bg: string; color: string; label: string }> = {
+    ACTIVE: { bg: "#dcfce7", color: "#15803d", label: "Active" },
+    CLOSED: { bg: "#f1f5f9", color: "#475569", label: "Closed" },
+    EXPIRED: { bg: "#fff7ed", color: "#c2410c", label: "Expired" },
+  };
+  const s = map[status] ?? map.CLOSED;
+  return (
+    <span
+      className="self-start text-xs px-3 py-1 rounded-full font-semibold"
+      style={{ backgroundColor: s.bg, color: s.color }}
+    >
+      {s.label}
+    </span>
+  );
+}
+
+function DetailItem({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <p className="text-xs mb-0.5" style={{ color: "#94a3b8" }}>{label}</p>
+      <p className="text-sm font-semibold" style={{ color: "#0F1E35" }}>{value}</p>
+    </div>
+  );
+}
+
+function StatCard({ label, value, color }: { label: string; value: string; color: string }) {
+  return (
+    <div
+      className="bg-white rounded-xl border p-5"
+      style={{ borderColor: "#E2E8F0", borderLeft: `4px solid ${color}` }}
+    >
+      <p className="text-2xl font-extrabold mb-0.5" style={{ color }}>
+        {value}
+      </p>
+      <p className="text-xs" style={{ color: "#64748b" }}>{label}</p>
+    </div>
+  );
+}

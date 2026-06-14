@@ -4,11 +4,12 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // Force Next.js output file tracing to include the Prisma query engine binary.
-  // Without this, the .node native addon is excluded from the serverless bundle
-  // and Prisma throws PrismaClientInitializationError at runtime on Vercel.
+  // Ensure the Prisma query engine binary is bundled in every serverless function.
+  // Without this, Next.js file tracing omits the .node native addon and Prisma
+  // throws PrismaClientInitializationError at runtime on Vercel.
   outputFileTracingIncludes: {
     "/**": ["./src/generated/prisma/**/*.node"],
+    "/api/**": ["./src/generated/prisma/**/*.node"],
   },
 };
 
