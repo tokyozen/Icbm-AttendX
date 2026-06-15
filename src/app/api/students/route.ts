@@ -13,16 +13,14 @@ const createSchema = z.object({
   gender: z.enum(["MALE", "FEMALE", "OTHER"]),
   trainingLocation: z.string().min(1, "Training location is required"),
   learningTrack: z.string().min(1, "Learning track is required"),
+  email: z.string().email().optional().nullable(),
+  phoneNumber: z.string().optional().nullable(),
 });
 
 export async function GET(request: Request) {
   const session = await auth();
   if (!session?.user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-  const role = (session.user as any).role as string;
-  if (!requireAdmin(role)) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
   const { searchParams } = new URL(request.url);
@@ -33,12 +31,13 @@ export async function GET(request: Request) {
 
   const where = search
     ? {
+        isActive: true,
         OR: [
           { fullName: { contains: search, mode: "insensitive" as const } },
           { applicationId: { contains: search, mode: "insensitive" as const } },
         ],
       }
-    : {};
+    : { isActive: true };
 
   const [students, total] = await Promise.all([
     prisma.student.findMany({

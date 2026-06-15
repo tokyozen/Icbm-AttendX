@@ -1,6 +1,6 @@
-import type { Role, Gender, SessionStatus } from "@/generated/prisma/client";
+import type { Role, Gender, SessionStatus, VerificationStatus } from "@/generated/prisma/client";
 
-export type { Role, Gender, SessionStatus };
+export type { Role, Gender, SessionStatus, VerificationStatus };
 
 export interface SessionUser {
   id: string;
@@ -17,6 +17,8 @@ export interface StudentRecord {
   gender: Gender;
   trainingLocation: string;
   learningTrack: string;
+  email?: string | null;
+  phoneNumber?: string | null;
   isActive: boolean;
 }
 
@@ -47,6 +49,9 @@ export interface AttendanceRecord {
   deviceType?: string | null;
   browser?: string | null;
   ipAddress?: string | null;
+  verificationStatus: 'PENDING' | 'VERIFIED' | 'FLAGGED';
+  verifiedAt?: Date | null;
+  verifiedBy?: string | null;
 }
 
 export interface CheckInPayload {
@@ -66,18 +71,15 @@ export interface ApiResponse<T = void> {
 
 export const LEARNING_TRACKS = [
   "Cybersecurity",
-  "AI & Data Science",
-  "BPO",
-  "Digital Marketing",
   "Software Development",
+  "AI & Machine Learning",
+  "Business Process & Outsourcing (BPO)",
+  "Project Management",
 ] as const;
 
 export const TRAINING_LOCATIONS = [
   "Abuja",
   "Enugu",
-  "Lagos",
-  "Port Harcourt",
-  "Kano",
 ] as const;
 
 export type LearningTrack = (typeof LEARNING_TRACKS)[number];

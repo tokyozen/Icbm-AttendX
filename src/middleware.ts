@@ -5,6 +5,6 @@ export const { auth: middleware } = NextAuth(authConfig);
 
 export const config = {
   matcher: [
-    "/((?!api/auth|api/qr/validate|api/students/lookup|api/attendance/checkin|s/|_next/static|_next/image|favicon.ico).*)",
+    "/((?!api/auth|api/qr/validate|api/students/lookup|api/attendance/checkin|s/|_next/static|_next/image|favicon.ico|register).*)",
   ],
 };

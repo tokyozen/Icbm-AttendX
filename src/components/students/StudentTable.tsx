@@ -10,11 +10,14 @@ export interface Student {
   gender: string;
   trainingLocation: string;
   learningTrack: string;
+  email?: string | null;
+  phoneNumber?: string | null;
   isActive: boolean;
 }
 
 interface Props {
   initialStudents: Student[];
+  canEdit?: boolean;
 }
 
 const PAGE_SIZE = 20;
@@ -36,10 +39,10 @@ function genderBadge(gender: string) {
 function trackBadge(track: string) {
   const map: Record<string, { bg: string; color: string }> = {
     Cybersecurity: { bg: "#ffe4e6", color: "#be123c" },
-    "AI & Data Science": { bg: "#f3e8ff", color: "#7e22ce" },
-    BPO: { bg: "#dbeafe", color: "#1d4ed8" },
-    "Digital Marketing": { bg: "#ffedd5", color: "#c2410c" },
     "Software Development": { bg: "#dcfce7", color: "#15803d" },
+    "AI & Machine Learning": { bg: "#f3e8ff", color: "#7e22ce" },
+    "Business Process & Outsourcing (BPO)": { bg: "#dbeafe", color: "#1d4ed8" },
+    "Project Management": { bg: "#ffedd5", color: "#c2410c" },
   };
   return map[track] ?? { bg: "#f1f5f9", color: "#475569" };
 }
@@ -61,6 +64,8 @@ function EditModal({
     gender: student.gender,
     trainingLocation: student.trainingLocation,
     learningTrack: student.learningTrack,
+    email: student.email ?? "",
+    phoneNumber: student.phoneNumber ?? "",
   });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -77,7 +82,11 @@ function EditModal({
     const res = await fetch(`/api/students/${student.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+      body: JSON.stringify({
+        ...form,
+        email: form.email.trim() || null,
+        phoneNumber: form.phoneNumber.trim() || null,
+      }),
     });
 
     setSaving(false);
@@ -155,6 +164,26 @@ function EditModal({
             </select>
           </FormField>
 
+          <FormField label="Email Address">
+            <input
+              type="email"
+              value={form.email}
+              onChange={(e) => set("email", e.target.value)}
+              className="fi"
+              placeholder="Optional"
+            />
+          </FormField>
+
+          <FormField label="Phone Number">
+            <input
+              type="tel"
+              value={form.phoneNumber}
+              onChange={(e) => set("phoneNumber", e.target.value)}
+              className="fi"
+              placeholder="Optional"
+            />
+          </FormField>
+
           <div className="flex gap-3 pt-2">
             <button
               type="button"
@@ -187,7 +216,7 @@ function EditModal({
           outline: none;
           background: white;
         }
-        .fi:focus { border-color: #0E7C7B; }
+        .fi:focus { border-color: #0E7C7B; box-shadow: 0 0 0 3px rgba(14,124,123,0.15); }
       `}</style>
     </div>
   );
@@ -205,12 +234,19 @@ function DeleteConfirm({
   onDeleted: () => void;
 }) {
   const [deleting, setDeleting] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleDelete() {
     setDeleting(true);
-    await fetch(`/api/students/${student.id}`, { method: "DELETE" });
+    setError("");
+    const res = await fetch(`/api/students/${student.id}`, { method: "DELETE" });
     setDeleting(false);
-    onDeleted();
+    if (res.ok) {
+      onDeleted();
+    } else {
+      const d = await res.json().catch(() => ({}));
+      setError(d.error ?? "Failed to delete. Please try again.");
+    }
   }
 
   return (
@@ -224,15 +260,19 @@ function DeleteConfirm({
           </div>
           <div>
             <h3 className="text-sm font-semibold" style={{ color: "#0F1E35" }}>
-              Remove Student
+              Delete Student
             </h3>
             <p className="text-sm mt-1" style={{ color: "#64748b" }}>
-              Are you sure you want to remove{" "}
-              <strong style={{ color: "#0F1E35" }}>{student.fullName}</strong>? This
-              action marks them as inactive.
+              Are you sure you want to permanently delete{" "}
+              <strong style={{ color: "#0F1E35" }}>{student.fullName}</strong>? This cannot be undone.
             </p>
           </div>
         </div>
+        {error && (
+          <p className="text-xs text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2 mb-4">
+            {error}
+          </p>
+        )}
         <div className="flex gap-3">
           <button
             onClick={onClose}
@@ -246,7 +286,7 @@ function DeleteConfirm({
             disabled={deleting}
             className="flex-1 px-4 py-2.5 rounded-lg text-sm font-semibold text-white bg-red-600 disabled:opacity-60"
           >
-            {deleting ? "Removing…" : "Remove"}
+            {deleting ? "Deleting…" : "Delete"}
           </button>
         </div>
       </div>
@@ -267,7 +307,7 @@ function FormField({ label, children }: { label: string; children: React.ReactNo
   );
 }
 
-export default function StudentTable({ initialStudents }: Props) {
+export default function StudentTable({ initialStudents, canEdit = true }: Props) {
   const [students, setStudents] = useState<Student[]>(initialStudents);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -341,16 +381,40 @@ export default function StudentTable({ initialStudents }: Props) {
             <table className="w-full text-sm">
               <thead>
                 <tr style={{ backgroundColor: "#F5F6FA", borderBottom: "1px solid #E2E8F0" }}>
-                  {["Application ID", "Full Name", "Gender", "Location", "Learning Track", "Status", "Actions"].map(
-                    (h) => (
-                      <th
-                        key={h}
-                        className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide whitespace-nowrap"
-                        style={{ color: "#64748b" }}
-                      >
-                        {h}
-                      </th>
-                    )
+                  {["Application ID", "Full Name", "Gender", "Location", "Learning Track"].map((h) => (
+                    <th
+                      key={h}
+                      className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide whitespace-nowrap"
+                      style={{ color: "#64748b" }}
+                    >
+                      {h}
+                    </th>
+                  ))}
+                  <th
+                    className="hidden md:table-cell text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide whitespace-nowrap"
+                    style={{ color: "#64748b" }}
+                  >
+                    Email
+                  </th>
+                  <th
+                    className="hidden md:table-cell text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide whitespace-nowrap"
+                    style={{ color: "#64748b" }}
+                  >
+                    Phone
+                  </th>
+                  <th
+                    className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide whitespace-nowrap"
+                    style={{ color: "#64748b" }}
+                  >
+                    Status
+                  </th>
+                  {canEdit && (
+                    <th
+                      className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide whitespace-nowrap"
+                      style={{ color: "#64748b" }}
+                    >
+                      Actions
+                    </th>
                   )}
                 </tr>
               </thead>
@@ -396,6 +460,18 @@ export default function StudentTable({ initialStudents }: Props) {
                           {s.learningTrack}
                         </span>
                       </td>
+                      {/* Email */}
+                      <td className="hidden md:table-cell px-4 py-3 text-xs" style={{ color: "#64748b" }}>
+                        {s.email ? (
+                          <a href={`mailto:${s.email}`} className="hover:underline" style={{ color: "#0E7C7B" }}>
+                            {s.email}
+                          </a>
+                        ) : "—"}
+                      </td>
+                      {/* Phone */}
+                      <td className="hidden md:table-cell px-4 py-3 text-xs whitespace-nowrap" style={{ color: "#64748b" }}>
+                        {s.phoneNumber ?? "—"}
+                      </td>
                       {/* Status */}
                       <td className="px-4 py-3">
                         <span
@@ -410,30 +486,32 @@ export default function StudentTable({ initialStudents }: Props) {
                         </span>
                       </td>
                       {/* Actions */}
-                      <td className="px-4 py-3">
-                        <div className="flex items-center gap-1">
-                          <button
-                            onClick={() => setEditStudent(s)}
-                            title="Edit"
-                            className="p-1.5 rounded-lg hover:bg-blue-50 transition-colors"
-                            style={{ color: "#3b82f6" }}
-                          >
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                            </svg>
-                          </button>
-                          <button
-                            onClick={() => setDeleteStudent(s)}
-                            title="Remove"
-                            className="p-1.5 rounded-lg hover:bg-red-50 transition-colors"
-                            style={{ color: "#ef4444" }}
-                          >
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                            </svg>
-                          </button>
-                        </div>
-                      </td>
+                      {canEdit && (
+                        <td className="px-4 py-3">
+                          <div className="flex items-center gap-1">
+                            <button
+                              onClick={() => setEditStudent(s)}
+                              title="Edit"
+                              className="p-1.5 rounded-lg hover:bg-blue-50 transition-colors"
+                              style={{ color: "#3b82f6" }}
+                            >
+                              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                              </svg>
+                            </button>
+                            <button
+                              onClick={() => setDeleteStudent(s)}
+                              title="Remove"
+                              className="p-1.5 rounded-lg hover:bg-red-50 transition-colors"
+                              style={{ color: "#ef4444" }}
+                            >
+                              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      )}
                     </tr>
                   );
                 })}
@@ -492,8 +570,9 @@ export default function StudentTable({ initialStudents }: Props) {
           student={deleteStudent}
           onClose={() => setDeleteStudent(null)}
           onDeleted={() => {
+            const deletedId = deleteStudent.id;
             setDeleteStudent(null);
-            loadStudents();
+            setStudents((prev) => prev.filter((s) => s.id !== deletedId));
           }}
         />
       )}

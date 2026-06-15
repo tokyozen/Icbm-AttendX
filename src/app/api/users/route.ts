@@ -20,26 +20,54 @@ async function requireSuperAdmin() {
   return session;
 }
 
-export async function GET() {
-  const session = await requireSuperAdmin();
-  if (!session) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+async function requireAdminAccess() {
+  const session = await auth();
+  if (!session?.user) return null;
+  const role = (session.user as { role?: string }).role ?? "";
+  if (role !== "SUPER_ADMIN" && role !== "ADMIN") return null;
+  return session;
+}
+
+export async function GET(request: Request) {
+  try {
+    const session = await requireAdminAccess();
+    if (!session) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
+    const { searchParams } = new URL(request.url);
+    const status = searchParams.get("status") ?? "all";
+
+    const where =
+      status === "active"
+        ? { isApproved: true, isActive: true }
+        : status === "pending"
+        ? { isApproved: false }
+        : {};
+
+    const users = await prisma.user.findMany({
+      where,
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+        location: true,
+        learningTrack: true,
+        isActive: true,
+        isApproved: true,
+        appliedAt: true,
+        approvedAt: true,
+        createdAt: true,
+      },
+      orderBy: { createdAt: "desc" },
+    });
+
+    return NextResponse.json({ users, total: users.length });
+  } catch (err) {
+    console.error("[GET /api/users]", err);
+    return NextResponse.json({ users: [], total: 0, error: "Internal server error" }, { status: 500 });
   }
-
-  const users = await prisma.user.findMany({
-    select: {
-      id: true,
-      name: true,
-      email: true,
-      role: true,
-      location: true,
-      isActive: true,
-      createdAt: true,
-    },
-    orderBy: { createdAt: "desc" },
-  });
-
-  return NextResponse.json({ users });
 }
 
 export async function POST(request: Request) {

@@ -4,20 +4,32 @@ export function generateStudentTemplate(): Buffer {
   const headers = [
     "Full Name",
     "Application ID",
+    "Phone Number",
+    "Email Address",
     "Gender",
     "Training Location",
     "Learning Track",
   ];
 
   const exampleRows = [
-    ["Amina Bello", "ICBM-2026-0001", "Female", "Abuja", "Cybersecurity"],
-    ["Chukwuemeka Obi", "ICBM-2026-0002", "Male", "Enugu", "BPO"],
+    ["Amina Bello", "ICBM-2026-0001", "+2348012345678", "amina.bello@example.com", "Female", "Abuja", "Cybersecurity"],
+    ["Chukwuemeka Obi", "ICBM-2026-0002", "+2348098765432", "chukwuemeka.obi@example.com", "Male", "Enugu", "Software Development"],
+    ["Fatima Yusuf", "ICBM-2026-0003", "+2347011223344", "fatima.yusuf@example.com", "Female", "Abuja", "AI & Machine Learning"],
+    ["Emeka Nwosu", "ICBM-2026-0004", "", "", "Male", "Enugu", "Business Process & Outsourcing (BPO)"],
+    ["Ngozi Adeyemi", "ICBM-2026-0005", "+2348155667788", "ngozi.adeyemi@example.com", "Female", "Abuja", "Project Management"],
   ];
 
   const ws = XLSX.utils.aoa_to_sheet([headers, ...exampleRows]);
 
-  // Column widths
-  ws["!cols"] = [{ wch: 25 }, { wch: 18 }, { wch: 10 }, { wch: 20 }, { wch: 25 }];
+  ws["!cols"] = [
+    { wch: 25 }, // Full Name
+    { wch: 18 }, // Application ID
+    { wch: 18 }, // Phone Number
+    { wch: 30 }, // Email Address
+    { wch: 10 }, // Gender
+    { wch: 20 }, // Training Location
+    { wch: 38 }, // Learning Track
+  ];
 
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Students");
@@ -31,6 +43,8 @@ export function parseStudentExcel(buffer: Buffer): Array<{
   gender: string;
   trainingLocation: string;
   learningTrack: string;
+  email: string;
+  phoneNumber: string;
 }> {
   const wb = XLSX.read(buffer, { type: "buffer" });
   const ws = wb.Sheets[wb.SheetNames[0]];
@@ -49,6 +63,12 @@ export function parseStudentExcel(buffer: Buffer): Array<{
     ).trim(),
     learningTrack: String(
       row["Learning Track"] ?? row["learning_track"] ?? row["learningTrack"] ?? ""
+    ).trim(),
+    email: String(
+      row["Email Address"] ?? row["Email"] ?? row["email"] ?? ""
+    ).trim(),
+    phoneNumber: String(
+      row["Phone Number"] ?? row["Phone"] ?? row["phone_number"] ?? row["phoneNumber"] ?? ""
     ).trim(),
   }));
 }

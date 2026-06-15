@@ -10,9 +10,7 @@ export default async function StudentsPage() {
   if (!session?.user) redirect("/login");
 
   const role = (session.user as any).role as string;
-  if (role !== "ADMIN" && role !== "SUPER_ADMIN") {
-    redirect("/dashboard");
-  }
+  const canEdit = role === "ADMIN" || role === "SUPER_ADMIN";
 
   const [students, totalCount, activeCount, inactiveCount] = await Promise.all([
     prisma.student.findMany({ orderBy: { createdAt: "desc" } }),
@@ -29,6 +27,8 @@ export default async function StudentsPage() {
     gender: s.gender as string,
     trainingLocation: s.trainingLocation,
     learningTrack: s.learningTrack,
+    email: s.email,
+    phoneNumber: s.phoneNumber,
     isActive: s.isActive,
   }));
 
@@ -36,6 +36,7 @@ export default async function StudentsPage() {
     <StudentsClient
       initialStudents={serialized}
       stats={{ total: totalCount, active: activeCount, inactive: inactiveCount }}
+      canEdit={canEdit}
     />
   );
 }

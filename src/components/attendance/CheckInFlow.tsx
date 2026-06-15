@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import CountdownTimer from "@/components/sessions/CountdownTimer";
+import { ICBM_LOGO_BASE64 } from "@/lib/logo";
 
 interface Props {
   qrToken: string;
@@ -28,6 +29,13 @@ interface CheckInResult {
 }
 
 type Step = "ENTER_ID" | "CONFIRM_RECORD" | "SUCCESS";
+
+const GLASS: React.CSSProperties = {
+  background: "rgba(255,255,255,0.08)",
+  border: "1px solid rgba(255,255,255,0.15)",
+  backdropFilter: "blur(20px)",
+  WebkitBackdropFilter: "blur(20px)",
+};
 
 export default function CheckInFlow({
   qrToken,
@@ -109,24 +117,38 @@ export default function CheckInFlow({
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F6FA] flex flex-col items-center px-4 py-8">
+    <div className="min-h-screen flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-[420px]">
         {/* Logo */}
-        <div className="text-center mb-6">
-          <p className="text-sm font-bold tracking-wider" style={{ color: "#0F1E35" }}>
-            ICBM-AttendX
-          </p>
+        <div className="flex justify-center mb-6">
+          <img
+            src={ICBM_LOGO_BASE64}
+            alt="ICBM-AttendX"
+            style={{
+              width: "56px",
+              height: "56px",
+              objectFit: "contain",
+              mixBlendMode: "screen",
+              display: "block",
+              margin: "0 auto",
+            }}
+          />
         </div>
 
         {/* Session banner */}
         <div
           className="rounded-xl p-4 mb-6"
-          style={{ backgroundColor: "#0F1E35" }}
+          style={{
+            background: "rgba(255,255,255,0.07)",
+            border: "1px solid rgba(255,255,255,0.12)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+          }}
         >
           <p className="text-white font-semibold text-base leading-snug mb-1">
             {sessionName}
           </p>
-          <p className="text-xs mb-2" style={{ color: "#94a3b8" }}>
+          <p className="text-xs mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>
             {location} · {learningTrack} · {instructorName}
           </p>
           <div className="flex items-center gap-1.5">
@@ -134,23 +156,20 @@ export default function CheckInFlow({
               <circle cx="12" cy="12" r="10" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l3 3" />
             </svg>
-            <span className="text-xs" style={{ color: "#94a3b8" }}>
+            <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
               Closes in{" "}
               <CountdownTimer expiresAt={expiresAt} />
             </span>
           </div>
         </div>
 
-        {/* Step content */}
+        {/* ENTER_ID step */}
         {step === "ENTER_ID" && (
-          <div className="bg-white rounded-2xl shadow-sm p-6">
-            <h1
-              className="text-xl font-bold mb-1"
-              style={{ color: "#0F1E35" }}
-            >
+          <div className="rounded-2xl p-6" style={GLASS}>
+            <h1 className="text-xl font-bold mb-1 text-white">
               Enter Your Application ID
             </h1>
-            <p className="text-sm mb-5" style={{ color: "#64748b" }}>
+            <p className="text-sm mb-5" style={{ color: "rgba(255,255,255,0.6)" }}>
               Type the ID on your student ID card
             </p>
 
@@ -161,12 +180,12 @@ export default function CheckInFlow({
                   type="text"
                   value={appId}
                   onChange={(e) => setAppId(e.target.value)}
-                  placeholder="e.g. ICBM-2026-0001"
+                  placeholder="e.g. APP-2025-12345"
                   autoCapitalize="none"
                   autoCorrect="off"
                   autoComplete="off"
                   spellCheck={false}
-                  className="w-full rounded-xl border px-4 py-3 text-base outline-none transition-colors"
+                  className="w-full rounded-xl border px-4 py-3 text-base outline-none transition-colors bg-white"
                   style={{
                     borderColor: error ? "#fca5a5" : "#E2E8F0",
                     color: "#0F1E35",
@@ -180,7 +199,9 @@ export default function CheckInFlow({
                   }
                 />
                 {error && (
-                  <p className="text-sm mt-2 text-red-500">{error}</p>
+                  <p className="text-sm mt-2" style={{ color: "#fca5a5" }}>
+                    {error}
+                  </p>
                 )}
               </div>
 
@@ -200,12 +221,10 @@ export default function CheckInFlow({
           </div>
         )}
 
+        {/* CONFIRM_RECORD step */}
         {step === "CONFIRM_RECORD" && student && (
-          <div className="bg-white rounded-2xl shadow-sm p-6">
-            <h1
-              className="text-xl font-bold mb-4"
-              style={{ color: "#0F1E35" }}
-            >
+          <div className="rounded-2xl p-6" style={GLASS}>
+            <h1 className="text-xl font-bold mb-4 text-white">
               Is this you?
             </h1>
 
@@ -248,14 +267,11 @@ export default function CheckInFlow({
             <div
               className="rounded-xl p-4 mb-5"
               style={{
-                backgroundColor: "#F5F6FA",
-                border: "1px solid #E2E8F0",
+                background: "rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255,255,255,0.2)",
               }}
             >
-              <p
-                className="text-2xl font-bold mb-1 leading-tight"
-                style={{ color: "#0F1E35" }}
-              >
+              <p className="text-2xl font-bold mb-1 leading-tight text-white">
                 {student.fullName}
               </p>
               <p
@@ -295,7 +311,7 @@ export default function CheckInFlow({
                 setAppId("");
               }}
               className="w-full text-center text-sm py-2"
-              style={{ color: "#64748b" }}
+              style={{ color: "rgba(255,255,255,0.55)" }}
             >
               Not me — try again
             </button>
@@ -303,7 +319,7 @@ export default function CheckInFlow({
         )}
       </div>
 
-      <p className="text-xs mt-8" style={{ color: "#cbd5e1" }}>
+      <p className="text-xs mt-8" style={{ color: "rgba(255,255,255,0.3)" }}>
         ICBM-AttendX · Secure Attendance System
       </p>
     </div>
@@ -314,12 +330,15 @@ function InfoChip({ label, value }: { label: string; value: string }) {
   return (
     <div
       className="rounded-lg p-2 text-center"
-      style={{ backgroundColor: "white", border: "1px solid #E2E8F0" }}
+      style={{
+        background: "rgba(255,255,255,0.15)",
+        border: "1px solid rgba(255,255,255,0.2)",
+      }}
     >
-      <p className="text-xs mb-0.5" style={{ color: "#94a3b8" }}>
+      <p className="text-xs mb-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>
         {label}
       </p>
-      <p className="text-xs font-semibold truncate" style={{ color: "#0F1E35" }}>
+      <p className="text-xs font-semibold truncate text-white">
         {value}
       </p>
     </div>
@@ -342,9 +361,29 @@ function SuccessScreen({ result }: { result: CheckInResult }) {
   });
 
   return (
-    <div className="min-h-screen bg-[#F5F6FA] flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-[420px]">
-        <div className="bg-white rounded-2xl shadow-sm p-8 text-center">
+        <div className="flex justify-center mb-3">
+          <img
+            src={ICBM_LOGO_BASE64}
+            alt="ICBM-AttendX"
+            style={{
+              width: "56px",
+              height: "56px",
+              objectFit: "contain",
+              mixBlendMode: "screen",
+              display: "block",
+              margin: "0 auto",
+            }}
+          />
+        </div>
+
+        <div className="rounded-2xl p-8 text-center" style={{
+          background: "rgba(255,255,255,0.08)",
+          border: "1px solid rgba(255,255,255,0.15)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+        }}>
           {/* Animated checkmark */}
           <div
             className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
@@ -360,18 +399,11 @@ function SuccessScreen({ result }: { result: CheckInResult }) {
               stroke="#16a34a"
               strokeWidth={2.5}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M5 13l4 4L19 7"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
 
-          <h1
-            className="text-2xl font-bold mb-1"
-            style={{ color: "#0F1E35" }}
-          >
+          <h1 className="text-2xl font-bold mb-1 text-white">
             Attendance Recorded!
           </h1>
 
@@ -381,29 +413,26 @@ function SuccessScreen({ result }: { result: CheckInResult }) {
 
           <div
             className="rounded-xl p-4 mb-5"
-            style={{ backgroundColor: "#F5F6FA" }}
+            style={{ background: "rgba(255,255,255,0.1)" }}
           >
-            <p className="text-2xl font-bold mb-0.5" style={{ color: "#0F1E35" }}>
+            <p className="text-2xl font-bold mb-0.5 text-white">
               {timeStr}
             </p>
-            <p className="text-sm" style={{ color: "#64748b" }}>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
               {dateStr}
             </p>
           </div>
 
-          <p className="text-sm" style={{ color: "#94a3b8" }}>
+          <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
             {result.sessionName}
           </p>
 
-          <p
-            className="text-sm font-medium mt-6"
-            style={{ color: "#64748b" }}
-          >
+          <p className="text-sm font-medium mt-6" style={{ color: "rgba(255,255,255,0.45)" }}>
             You may close this page.
           </p>
         </div>
 
-        <p className="text-xs text-center mt-4" style={{ color: "#cbd5e1" }}>
+        <p className="text-xs text-center mt-4" style={{ color: "rgba(255,255,255,0.3)" }}>
           ICBM-AttendX · Secure Attendance System
         </p>
       </div>

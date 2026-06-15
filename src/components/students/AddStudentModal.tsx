@@ -179,7 +179,7 @@ export default function AddStudentModal({ onClose, onSuccess }: Props) {
           transition: border-color 0.15s;
           background: white;
         }
-        .input:focus { border-color: #0E7C7B; }
+        .input:focus { border-color: #0E7C7B; box-shadow: 0 0 0 3px rgba(14,124,123,0.15); }
       `}</style>
     </div>
   );

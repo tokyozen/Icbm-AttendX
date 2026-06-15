@@ -70,7 +70,7 @@ export default async function DashboardPage() {
       value: String(totalStudents),
       color: "#0E7C7B",
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a4 4 0 00-5-3.87M9 20H4v-2a4 4 0 015-3.87m6-4a4 4 0 11-8 0 4 4 0 018 0zm6 0a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
@@ -80,7 +80,7 @@ export default async function DashboardPage() {
       value: String(attendanceToday),
       color: "#0E7C7B",
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
@@ -90,7 +90,7 @@ export default async function DashboardPage() {
       value: String(activeSessionCount),
       color: "#C9922A",
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
           <circle cx="12" cy="12" r="3" strokeLinecap="round" strokeLinejoin="round" />
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
         </svg>
@@ -101,7 +101,7 @@ export default async function DashboardPage() {
       value: attendanceRate,
       color: "#C9922A",
       icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M3 3v18h18" />
           <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l4-5 4 3 5-7" />
         </svg>
@@ -113,7 +113,7 @@ export default async function DashboardPage() {
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-8">
-        <h1 className="text-2xl font-bold" style={{ color: "#0F1E35" }}>
+        <h1 className="text-4xl font-black tracking-tight text-[#0F1E35]">
           {greeting}, {name}
         </h1>
         <p className="text-sm" style={{ color: "#64748b" }}>{dateStr}</p>
@@ -134,10 +134,10 @@ export default async function DashboardPage() {
               {card.icon}
             </div>
             <div>
-              <p className="text-3xl font-bold" style={{ color: "#0F1E35" }}>
+              <p className="text-6xl font-black leading-none mt-2" style={{ color: "#0F1E35" }}>
                 {card.value}
               </p>
-              <p className="text-xs mt-0.5 font-medium" style={{ color: "#64748b" }}>
+              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mt-2">
                 {card.label}
               </p>
             </div>
@@ -164,18 +164,22 @@ export default async function DashboardPage() {
 
           {activeSessions.length === 0 ? (
             <div
-              className="rounded-lg p-6 text-center"
+              className="rounded-lg p-8 text-center"
               style={{ backgroundColor: "#f0fafa", border: "1px dashed #0E7C7B" }}
             >
-              <svg className="w-8 h-8 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="#0E7C7B" strokeWidth={1.5}>
+              <svg className="w-10 h-10 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="#0E7C7B" strokeWidth={1.5}>
                 <rect x="3" y="4" width="18" height="18" rx="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 2v4M8 2v4M3 10h18" />
               </svg>
-              <p className="text-sm mb-2" style={{ color: "#64748b" }}>
+              <p className="text-sm font-medium mb-2" style={{ color: "#0a5a59" }}>
                 No active sessions right now.
               </p>
-              <Link href="/sessions/new" className="text-sm font-medium" style={{ color: "#0E7C7B" }}>
-                → Start a Session
+              <Link
+                href="/sessions/new"
+                className="inline-block text-xs font-semibold px-4 py-1.5 rounded-lg text-white"
+                style={{ backgroundColor: "#0E7C7B" }}
+              >
+                Start a Session
               </Link>
             </div>
           ) : (
@@ -223,12 +227,18 @@ export default async function DashboardPage() {
             )}
           </div>
           {recentCheckIns.length === 0 ? (
-            <div className="rounded-lg p-6 text-center" style={{ backgroundColor: "#F5F6FA" }}>
-              <svg className="w-8 h-8 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="#94a3b8" strokeWidth={1.5}>
+            <div
+              className="rounded-lg p-8 text-center"
+              style={{ backgroundColor: "#fffbf2", border: "1px dashed #C9922A" }}
+            >
+              <svg className="w-10 h-10 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="#C9922A" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <p className="text-sm" style={{ color: "#94a3b8" }}>
+              <p className="text-sm font-medium" style={{ color: "#92400e" }}>
                 No check-ins recorded today.
+              </p>
+              <p className="text-xs mt-1" style={{ color: "#C9922A" }}>
+                Check-ins will appear here as students clock in.
               </p>
             </div>
           ) : (

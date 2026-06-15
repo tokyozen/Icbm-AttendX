@@ -152,7 +152,7 @@ export default function ReportsPage() {
 
   return (
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6" style={{ color: "#0F1E35" }}>
+      <h1 className="text-4xl font-black tracking-tight text-[#0F1E35] mb-6">
         Reports &amp; Exports
       </h1>
 

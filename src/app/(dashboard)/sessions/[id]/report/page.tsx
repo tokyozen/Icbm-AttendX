@@ -46,6 +46,15 @@ export default async function SessionReportPage({
   });
 
   const checkedIn = trainingSession.attendanceRecords.length;
+  const verifiedCount = trainingSession.attendanceRecords.filter(
+    (r) => r.verificationStatus === "VERIFIED"
+  ).length;
+  const flaggedCount = trainingSession.attendanceRecords.filter(
+    (r) => r.verificationStatus === "FLAGGED"
+  ).length;
+  const pendingCount = trainingSession.attendanceRecords.filter(
+    (r) => r.verificationStatus === "PENDING"
+  ).length;
   const attendanceRate =
     totalRegistered > 0
       ? `${((checkedIn / totalRegistered) * 100).toFixed(1)}%`
@@ -109,6 +118,15 @@ export default async function SessionReportPage({
         <StatCard label="Attendance Rate" value={attendanceRate} color="#C9922A" />
       </div>
 
+      {/* Verification summary */}
+      {checkedIn > 0 && (
+        <div className="flex flex-wrap gap-3 mb-5">
+          <VerifBadge label="Verified" count={verifiedCount} bg="#dcfce7" color="#15803d" />
+          <VerifBadge label="Flagged" count={flaggedCount} bg="#fee2e2" color="#dc2626" />
+          <VerifBadge label="Pending" count={pendingCount} bg="#fef9c3" color="#a16207" />
+        </div>
+      )}
+
       {/* Export + Table */}
       <div className="bg-white rounded-xl border overflow-hidden" style={{ borderColor: "#E2E8F0" }}>
         <div
@@ -132,7 +150,7 @@ export default async function SessionReportPage({
             <table className="w-full text-sm">
               <thead>
                 <tr style={{ backgroundColor: "#F5F6FA", borderBottom: "1px solid #E2E8F0" }}>
-                  {["#", "Full Name", "Application ID", "Gender", "Check-In Time", "Device"].map((h) => (
+                  {["#", "Full Name", "Application ID", "Gender", "Check-In Time", "Verification", "Device"].map((h) => (
                     <th
                       key={h}
                       className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide whitespace-nowrap"
@@ -163,6 +181,9 @@ export default async function SessionReportPage({
                     </td>
                     <td className="px-4 py-3 text-xs whitespace-nowrap" style={{ color: "#475569" }}>
                       {formatDateTime(r.checkInTime)}
+                    </td>
+                    <td className="px-4 py-3">
+                      <VerifBadge status={r.verificationStatus} />
                     </td>
                     <td className="px-4 py-3 text-xs" style={{ color: "#64748b" }}>
                       {r.deviceType ?? "—"}
@@ -216,5 +237,32 @@ function StatCard({ label, value, color }: { label: string; value: string; color
       </p>
       <p className="text-xs" style={{ color: "#64748b" }}>{label}</p>
     </div>
+  );
+}
+
+function VerifBadge({ status, label, count, bg, color }: {
+  status?: string;
+  label?: string;
+  count?: number;
+  bg?: string;
+  color?: string;
+}) {
+  if (label !== undefined && count !== undefined && bg && color) {
+    return (
+      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: bg, color }}>
+        <span className="font-black text-sm">{count}</span> {label}
+      </span>
+    );
+  }
+  const map: Record<string, { bg: string; color: string }> = {
+    VERIFIED: { bg: "#dcfce7", color: "#15803d" },
+    FLAGGED:  { bg: "#fee2e2", color: "#dc2626" },
+    PENDING:  { bg: "#fef9c3", color: "#a16207" },
+  };
+  const s = map[status ?? "PENDING"] ?? map.PENDING;
+  return (
+    <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap" style={{ backgroundColor: s.bg, color: s.color }}>
+      {status ?? "PENDING"}
+    </span>
   );
 }

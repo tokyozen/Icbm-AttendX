@@ -13,6 +13,8 @@ const updateSchema = z.object({
   gender: z.enum(["MALE", "FEMALE", "OTHER"]).optional(),
   trainingLocation: z.string().min(1).optional(),
   learningTrack: z.string().min(1).optional(),
+  email: z.string().email().optional().nullable(),
+  phoneNumber: z.string().optional().nullable(),
   isActive: z.boolean().optional(),
 });
 
@@ -93,11 +95,10 @@ export async function DELETE(request: Request, { params }: { params: Params }) {
   const { id } = await params;
 
   try {
-    await prisma.student.update({
-      where: { id },
-      data: { isActive: false },
-    });
-    return NextResponse.json({ success: true });
+    // Remove attendance records first to satisfy the foreign key constraint
+    await prisma.attendanceRecord.deleteMany({ where: { studentId: id } });
+    const deleted = await prisma.student.delete({ where: { id } });
+    return NextResponse.json({ success: true, deleted });
   } catch (err: any) {
     if (err?.code === "P2025") {
       return NextResponse.json({ error: "Student not found" }, { status: 404 });

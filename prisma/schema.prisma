@@ -27,16 +27,27 @@ enum SessionStatus {
   CLOSED
 }
 
+enum VerificationStatus {
+  PENDING
+  VERIFIED
+  FLAGGED
+}
+
 model User {
-  id           String   @id @default(uuid())
+  id           String    @id @default(uuid())
   name         String
-  email        String   @unique
-  passwordHash String   @map("password_hash")
-  role         Role     @default(INSTRUCTOR)
+  email        String    @unique
+  passwordHash String    @map("password_hash")
+  role         Role      @default(INSTRUCTOR)
   location     String?
-  isActive     Boolean  @default(true) @map("is_active")
-  createdAt    DateTime @default(now()) @map("created_at")
-  updatedAt    DateTime @updatedAt @map("updated_at")
+  learningTrack String?  @map("learning_track")
+  isActive     Boolean   @default(false) @map("is_active")
+  isApproved   Boolean   @default(false) @map("is_approved")
+  appliedAt    DateTime? @map("applied_at")
+  approvedAt   DateTime? @map("approved_at")
+  approvedBy   String?   @map("approved_by")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
 
   sessions TrainingSession[]
 
@@ -50,6 +61,8 @@ model Student {
   gender           Gender
   trainingLocation String   @map("training_location")
   learningTrack    String   @map("learning_track")
+  email            String?  @map("email")
+  phoneNumber      String?  @map("phone_number")
   isActive         Boolean  @default(true) @map("is_active")
   createdAt        DateTime @default(now()) @map("created_at")
   updatedAt        DateTime @updatedAt @map("updated_at")
@@ -80,19 +93,22 @@ model TrainingSession {
 }
 
 model AttendanceRecord {
-  id               String   @id @default(uuid())
-  sessionId        String   @map("session_id")
-  studentId        String   @map("student_id")
-  applicationId    String   @map("application_id")
-  fullName         String   @map("full_name")
-  gender           String
-  trainingLocation String   @map("training_location")
-  learningTrack    String   @map("learning_track")
-  checkInTime      DateTime @default(now()) @map("check_in_time")
-  deviceType       String?  @map("device_type")
-  browser          String?
-  ipAddress        String?  @map("ip_address")
-  createdAt        DateTime @default(now()) @map("created_at")
+  id                 String             @id @default(uuid())
+  sessionId          String             @map("session_id")
+  studentId          String             @map("student_id")
+  applicationId      String             @map("application_id")
+  fullName           String             @map("full_name")
+  gender             String
+  trainingLocation   String             @map("training_location")
+  learningTrack      String             @map("learning_track")
+  checkInTime        DateTime           @default(now()) @map("check_in_time")
+  deviceType         String?            @map("device_type")
+  browser            String?
+  ipAddress          String?            @map("ip_address")
+  verificationStatus VerificationStatus @default(PENDING) @map("verification_status")
+  verifiedAt         DateTime?          @map("verified_at")
+  verifiedBy         String?            @map("verified_by")
+  createdAt          DateTime           @default(now()) @map("created_at")
 
   session TrainingSession @relation(fields: [sessionId], references: [id])
   student Student         @relation(fields: [studentId], references: [id])

@@ -64,6 +64,8 @@ export async function POST(request: Request) {
       gender,
       trainingLocation: row.trainingLocation || "Unknown",
       learningTrack: row.learningTrack || "Unknown",
+      email: row.email || null,
+      phoneNumber: row.phoneNumber || null,
       isActive: true,
     };
 

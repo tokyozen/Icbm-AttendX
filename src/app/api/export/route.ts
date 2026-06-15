@@ -106,6 +106,7 @@ export async function GET(request: Request) {
       minute: "2-digit",
       hour12: true,
     }),
+    "Verification Status": r.verificationStatus,
     Device: r.deviceType ?? "",
     Browser: r.browser ?? "",
   }));
@@ -121,6 +122,7 @@ export async function GET(request: Request) {
     Instructor: "",
     Date: "",
     "Check-In Time": "",
+    "Verification Status": "",
     Device: "",
     Browser: "",
   });
@@ -149,16 +151,36 @@ export async function GET(request: Request) {
     const wb = XLSX.utils.book_new();
     const ws = XLSX.utils.aoa_to_sheet(wsData);
 
-    // Bold header row
-    const headerRange = XLSX.utils.decode_range(ws["!ref"] ?? "A1:L1");
+    const verColIdx = headers.indexOf("Verification Status");
+
+    // Bold header row + color-code Verification Status cells
+    const headerRange = XLSX.utils.decode_range(ws["!ref"] ?? "A1:M1");
     for (let col = headerRange.s.c; col <= headerRange.e.c; col++) {
       const cellRef = XLSX.utils.encode_cell({ r: 0, c: col });
       if (!ws[cellRef]) continue;
       ws[cellRef].s = { font: { bold: true } };
     }
 
+    // Color-code verification status column
+    if (verColIdx >= 0) {
+      const fills: Record<string, string> = {
+        VERIFIED: "C6EFCE",  // green
+        FLAGGED:  "FFC7CE",  // red
+        PENDING:  "FFEB9C",  // yellow
+      };
+      for (let row = 1; row <= rows.length; row++) {
+        const cellRef = XLSX.utils.encode_cell({ r: row, c: verColIdx });
+        if (!ws[cellRef]) continue;
+        const val = String(ws[cellRef].v ?? "");
+        const fgColor = fills[val];
+        if (fgColor) {
+          ws[cellRef].s = { fill: { patternType: "solid", fgColor: { rgb: fgColor } } };
+        }
+      }
+    }
+
     // Auto-width columns
-    const colWidths = headers.map((h, colIdx) => {
+    const colWidths = headers.map((h) => {
       const maxLen = Math.max(
         h.length,
         ...rows.map((r) => String(r[h as keyof typeof r] ?? "").length)

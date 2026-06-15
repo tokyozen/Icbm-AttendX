@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
 import type { Role } from "@/generated/prisma/client";
+import { ICBM_LOGO_BASE64 } from "@/lib/logo";
 
 interface SidebarUser {
   name: string;
@@ -74,6 +75,15 @@ const NAV = [
   },
 ];
 
+const BLOB_KEYFRAMES = `
+@keyframes blobDrift {
+  0%   { transform: translate(0,0) scale(1); }
+  33%  { transform: translate(-20px, 30px) scale(1.1); }
+  66%  { transform: translate(20px, -15px) scale(0.92); }
+  100% { transform: translate(-10px, 10px) scale(1.06); }
+}
+`;
+
 function roleBadgeStyle(role: Role) {
   if (role === "SUPER_ADMIN") return { backgroundColor: "#C9922A", color: "#fff" };
   if (role === "ADMIN") return { backgroundColor: "#0E7C7B", color: "#fff" };
@@ -95,7 +105,117 @@ function initials(name: string) {
     .toUpperCase();
 }
 
-function NavLinks({ user, pathname, onNavigate }: { user: SidebarUser; pathname: string; onNavigate?: () => void }) {
+function SidebarShell({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative flex flex-col h-full overflow-hidden" style={{ background: "linear-gradient(180deg, #0F1E35 0%, #162840 100%)" }}>
+      <style>{BLOB_KEYFRAMES}</style>
+
+      {/* Teal blob — top-right */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-60px",
+          right: "-60px",
+          width: "280px",
+          height: "280px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, #0E7C7B, #0a5a59)",
+          opacity: 0.9,
+          filter: "blur(48px)",
+          pointerEvents: "none",
+          zIndex: 0,
+          animation: "blobDrift 16s ease-in-out infinite",
+        }}
+      />
+
+      {/* Gold blob — bottom-left */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-50px",
+          left: "-50px",
+          width: "240px",
+          height: "240px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, #C9922A, #a07420)",
+          opacity: 0.85,
+          filter: "blur(42px)",
+          pointerEvents: "none",
+          zIndex: 0,
+          animation: "blobDrift 21s ease-in-out infinite",
+          animationDelay: "-8s",
+        }}
+      />
+
+      {/* Small teal blob — center */}
+      <div
+        style={{
+          position: "absolute",
+          top: "45%",
+          left: "20%",
+          width: "160px",
+          height: "160px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, #0E7C7B, #064e4d)",
+          opacity: 0.55,
+          filter: "blur(36px)",
+          pointerEvents: "none",
+          zIndex: 0,
+          animation: "blobDrift 26s ease-in-out infinite",
+          animationDelay: "-14s",
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative flex flex-col h-full" style={{ zIndex: 2 }}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function SidebarLogo() {
+  return (
+    <div className="flex flex-col items-center px-4 pt-6 pb-4">
+      <img
+        src={ICBM_LOGO_BASE64}
+        alt="ICBM"
+        style={{ width: "80px", height: "80px", objectFit: "contain", mixBlendMode: "screen", display: "block" }}
+      />
+      <span className="text-white font-bold text-sm tracking-widest mt-1">
+        ICBM-AttendX
+      </span>
+      <span className="text-xs tracking-wider" style={{ color: "rgba(255,255,255,0.4)" }}>
+        by SBTS Group
+      </span>
+    </div>
+  );
+}
+
+function SbtsFooter() {
+  return (
+    <div
+      className="flex flex-col items-center gap-1 pt-3 mt-2"
+      style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
+    >
+      <span className="uppercase tracking-widest text-[9px]" style={{ color: "rgba(255,255,255,0.4)" }}>
+        Powered by SBTS Group
+      </span>
+    </div>
+  );
+}
+
+function NavLinks({
+  user,
+  pathname,
+  pendingCount,
+  onNavigate,
+}: {
+  user: SidebarUser;
+  pathname: string;
+  pendingCount: number;
+  onNavigate?: () => void;
+}) {
   const isAdmin = user.role === "SUPER_ADMIN" || user.role === "ADMIN";
   return (
     <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
@@ -106,21 +226,35 @@ function NavLinks({ user, pathname, onNavigate }: { user: SidebarUser; pathname:
             key={item.href}
             href={item.href}
             onClick={onNavigate}
-            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
             style={
               active
                 ? { backgroundColor: "#0E7C7B", color: "#ffffff" }
                 : { color: "#94a3b8" }
             }
             onMouseEnter={(e) => {
-              if (!active) (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#1e3a5f";
+              if (!active) {
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,255,255,0.05)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "#ffffff";
+              }
             }}
             onMouseLeave={(e) => {
-              if (!active) (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
+              if (!active) {
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
+                (e.currentTarget as HTMLAnchorElement).style.color = "#94a3b8";
+              }
             }}
           >
             {item.icon}
-            {item.label}
+            <span className="flex-1">{item.label}</span>
+            {item.label === "Users" && pendingCount > 0 && (
+              <span
+                className="inline-flex items-center justify-center text-xs font-bold rounded-full px-1.5 min-w-[1.25rem] h-5"
+                style={{ backgroundColor: "#C9922A", color: "#fff" }}
+              >
+                {pendingCount}
+              </span>
+            )}
           </Link>
         );
       })}
@@ -130,7 +264,7 @@ function NavLinks({ user, pathname, onNavigate }: { user: SidebarUser; pathname:
 
 function UserFooter({ user }: { user: SidebarUser }) {
   return (
-    <div className="px-4 py-4 border-t" style={{ borderColor: "#1e3a5f" }}>
+    <div className="px-4 py-4" style={{ borderTop: "1px solid #1e3a5f" }}>
       <div className="flex items-center gap-3 mb-3">
         <div
           className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold text-white"
@@ -150,10 +284,10 @@ function UserFooter({ user }: { user: SidebarUser }) {
       </div>
       <button
         onClick={() => signOut({ callbackUrl: "/login" })}
-        className="w-full text-left text-xs px-3 py-2 rounded-lg transition-colors"
+        className="w-full text-left text-xs px-3 py-2 rounded-lg transition-all duration-200"
         style={{ color: "#94a3b8" }}
         onMouseEnter={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#1e3a5f";
+          (e.currentTarget as HTMLButtonElement).style.backgroundColor = "rgba(255,255,255,0.05)";
           (e.currentTarget as HTMLButtonElement).style.color = "#ffffff";
         }}
         onMouseLeave={(e) => {
@@ -163,6 +297,7 @@ function UserFooter({ user }: { user: SidebarUser }) {
       >
         Sign Out
       </button>
+      <SbtsFooter />
     </div>
   );
 }
@@ -170,22 +305,31 @@ function UserFooter({ user }: { user: SidebarUser }) {
 export default function Sidebar({ user }: SidebarProps) {
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [pendingCount, setPendingCount] = useState(0);
+
+  const isAdmin = user.role === "SUPER_ADMIN" || user.role === "ADMIN";
+
+  useEffect(() => {
+    if (!isAdmin) return;
+    const fetch_ = () =>
+      fetch("/api/users?status=pending")
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => d && setPendingCount(d.total ?? 0))
+        .catch(() => {});
+    fetch_();
+    const id = setInterval(fetch_, 60_000);
+    return () => clearInterval(id);
+  }, [isAdmin]);
 
   return (
     <>
       {/* ── Desktop sidebar ── */}
-      <aside
-        className="hidden lg:flex flex-col w-64 flex-shrink-0 h-screen sticky top-0"
-        style={{ backgroundColor: "#0F1E35" }}
-      >
-        {/* Logo */}
-        <div className="px-5 py-5 border-b" style={{ borderColor: "#1e3a5f" }}>
-          <p className="text-base font-extrabold text-white">ICBM-AttendX</p>
-          <p className="text-xs mt-0.5" style={{ color: "#64748b" }}>by SBTS Group</p>
-        </div>
-
-        <NavLinks user={user} pathname={pathname} />
-        <UserFooter user={user} />
+      <aside className="hidden lg:flex flex-col w-64 flex-shrink-0 h-screen sticky top-0 overflow-hidden">
+        <SidebarShell>
+          <SidebarLogo />
+          <NavLinks user={user} pathname={pathname} pendingCount={pendingCount} />
+          <UserFooter user={user} />
+        </SidebarShell>
       </aside>
 
       {/* ── Mobile top bar ── */}
@@ -202,7 +346,10 @@ export default function Sidebar({ user }: SidebarProps) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-        <span className="text-white font-bold text-sm">ICBM-AttendX</span>
+        <div className="flex items-center gap-2">
+          <img src={ICBM_LOGO_BASE64} alt="ICBM" style={{ width: "28px", height: "28px", objectFit: "contain", mixBlendMode: "screen", display: "block" }} />
+          <span className="text-white font-bold text-sm">ICBM-AttendX</span>
+        </div>
         <div
           className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white"
           style={{ backgroundColor: "#0E7C7B" }}
@@ -217,28 +364,29 @@ export default function Sidebar({ user }: SidebarProps) {
           className="lg:hidden fixed inset-0 z-40 flex"
           onClick={() => setDrawerOpen(false)}
         >
-          {/* backdrop */}
           <div className="absolute inset-0 bg-black/50" />
-
-          {/* drawer */}
           <aside
-            className="relative flex flex-col w-72 h-full shadow-xl"
-            style={{ backgroundColor: "#0F1E35" }}
+            className="relative flex flex-col w-72 h-full shadow-xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="px-5 py-5 border-b flex items-center justify-between" style={{ borderColor: "#1e3a5f" }}>
-              <div>
-                <p className="text-base font-extrabold text-white">ICBM-AttendX</p>
-                <p className="text-xs mt-0.5" style={{ color: "#64748b" }}>by SBTS Group</p>
+            <SidebarShell>
+              <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: "1px solid #1e3a5f" }}>
+                <div className="flex items-center gap-2">
+                  <img src={ICBM_LOGO_BASE64} alt="ICBM" style={{ width: "32px", height: "32px", objectFit: "contain", mixBlendMode: "screen", display: "block" }} />
+                  <div>
+                    <p className="text-sm font-extrabold text-white">ICBM-AttendX</p>
+                    <p className="text-[10px]" style={{ color: "#64748b" }}>by SBTS Group</p>
+                  </div>
+                </div>
+                <button onClick={() => setDrawerOpen(false)} className="text-gray-400">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
               </div>
-              <button onClick={() => setDrawerOpen(false)} className="text-gray-400">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <NavLinks user={user} pathname={pathname} onNavigate={() => setDrawerOpen(false)} />
-            <UserFooter user={user} />
+              <NavLinks user={user} pathname={pathname} pendingCount={pendingCount} onNavigate={() => setDrawerOpen(false)} />
+              <UserFooter user={user} />
+            </SidebarShell>
           </aside>
         </div>
       )}

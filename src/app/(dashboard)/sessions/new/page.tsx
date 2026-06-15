@@ -186,7 +186,7 @@ export default function NewSessionPage() {
           background: white;
           transition: border-color 0.15s;
         }
-        .inp:focus { border-color: #0E7C7B; }
+        .inp:focus { border-color: #0E7C7B; box-shadow: 0 0 0 3px rgba(14,124,123,0.15); }
       `}</style>
     </div>
   );
