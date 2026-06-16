@@ -98,7 +98,14 @@ export default function SessionDetailPage() {
     const res = await fetch(`/api/sessions/${id}/end`, { method: "POST" });
     setEnding(false);
     setConfirmEnd(false);
-    if (res.ok) fetchSession();
+    if (res.ok) {
+      // Optimistically flip to CLOSED so verification mode renders immediately
+      setSessionData((prev) =>
+        prev ? { ...prev, status: "CLOSED", endedAt: new Date().toISOString() } : prev
+      );
+      // Then fetch full fresh data to pick up any last-minute check-ins
+      fetchSession();
+    }
   }
 
   async function handleExtend(minutes: number) {
@@ -161,11 +168,10 @@ export default function SessionDetailPage() {
 
   const isActive = sessionData.status === "ACTIVE";
   const isClosed = sessionData.status === "CLOSED";
+  const isSessionDone = isClosed || sessionData.status === "EXPIRED";
   const records = sessionData.attendanceRecords;
 
-  const hasPending = records.some((r) => r.verificationStatus === "PENDING");
-  const showVerification = isClosed && hasPending;
-  const showExport = isClosed && !hasPending && records.length > 0;
+  const showVerification = isSessionDone && records.length > 0;
 
   return (
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
@@ -289,7 +295,7 @@ export default function SessionDetailPage() {
                   style={{ backgroundColor: "#fff5f5", border: "1px solid #fecaca" }}
                 >
                   <p className="text-sm font-medium text-red-700 mb-3">
-                    End this session? Students won't be able to check in anymore.
+                    End this session? You will enter Verification Mode to review attendance before exporting.
                   </p>
                   <div className="flex gap-2">
                     <button
@@ -339,7 +345,9 @@ export default function SessionDetailPage() {
         </div>
       </div>
 
-      {/* ── Verification mode (CLOSED + pending records) ── */}
+      <div key={sessionData.status} style={{ animation: "fadeIn 0.4s ease-in-out" }}>
+
+      {/* ── Verification mode (CLOSED or EXPIRED + has records) ── */}
       {showVerification && (
         <VerificationList
           sessionId={sessionData.id}
@@ -349,30 +357,7 @@ export default function SessionDetailPage() {
         />
       )}
 
-      {/* ── Export panel (CLOSED + all verified/flagged) ── */}
-      {showExport && (
-        <div className="mt-2 p-6 bg-white rounded-xl border-2 border-[#0E7C7B] text-center">
-          <div className="text-4xl mb-2">🎉</div>
-          <h3 className="font-black text-[#0F1E35] text-lg mb-1">Verification Complete</h3>
-          <p className="text-gray-400 text-sm mb-4">All records have been reviewed.</p>
-          <div className="flex gap-3 justify-center flex-wrap">
-            <a
-              href={`/api/export?format=csv&sessionId=${sessionData.id}`}
-              className="px-6 py-3 bg-[#0E7C7B] text-white font-semibold rounded-lg hover:bg-[#0E7C7B]/90 transition-colors"
-            >
-              Export CSV
-            </a>
-            <a
-              href={`/api/export?format=excel&sessionId=${sessionData.id}`}
-              className="px-6 py-3 border-2 border-[#0E7C7B] text-[#0E7C7B] font-semibold rounded-lg hover:bg-[#0E7C7B]/10 transition-colors"
-            >
-              Export Excel
-            </a>
-          </div>
-        </div>
-      )}
-
-      {/* ── Attendance list (ACTIVE or EXPIRED) ── */}
+      {/* ── Attendance list (ACTIVE or done with no records) ── */}
       {!showVerification && (
         <div className="bg-white rounded-xl border overflow-hidden" style={{ borderColor: "#E2E8F0" }}>
           <div
@@ -448,6 +433,8 @@ export default function SessionDetailPage() {
           )}
         </div>
       )}
+
+      </div>{/* end fade wrapper */}
     </div>
   );
 }

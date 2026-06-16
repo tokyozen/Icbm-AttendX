@@ -15,6 +15,7 @@
     "db:activate-admin": "tsx scripts/activate-admin.ts",
     "db:delete-test-student": "tsx scripts/delete-test-student.ts",
     "db:update-admin": "tsx scripts/update-admin.ts",
+    "db:fix-verification": "tsx scripts/fix-verification-status.ts",
     "postinstall": "prisma generate"
   },
   "dependencies": {

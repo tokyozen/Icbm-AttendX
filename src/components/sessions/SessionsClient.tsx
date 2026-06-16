@@ -2,7 +2,6 @@
 
 import { useCallback, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { formatDate, formatTime } from "@/lib/utils";
 
 interface SessionRow {
@@ -33,7 +32,6 @@ const STATUS_STYLE: Record<string, { bg: string; color: string; label: string }>
 };
 
 export default function SessionsClient({ initialSessions, userRole }: Props) {
-  const router = useRouter();
   const [sessions, setSessions] = useState<SessionRow[]>(initialSessions);
   const [activeTab, setActiveTab] = useState<Tab>("ALL");
   const [endingId, setEndingId] = useState<string | null>(null);
@@ -242,10 +240,13 @@ export default function SessionsClient({ initialSessions, userRole }: Props) {
                   ) : (
                     <Link
                       href={`/sessions/${s.id}`}
-                      className="px-3 py-1.5 text-xs rounded-lg border font-semibold"
-                      style={{ borderColor: "#0E7C7B", color: "#0E7C7B" }}
+                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg font-semibold text-white"
+                      style={{ backgroundColor: "#0E7C7B" }}
                     >
-                      View Report
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      Verify &amp; Export
                     </Link>
                   )}
                 </div>
