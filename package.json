@@ -17,7 +17,9 @@
     "db:update-admin": "tsx scripts/update-admin.ts",
     "db:fix-verification": "tsx scripts/fix-verification-status.ts",
     "postinstall": "prisma generate",
-    "db:import-history": "tsx scripts/import-historical-attendance.ts"
+    "db:import-history": "tsx scripts/import-historical-attendance.ts",
+    "db:import-enugu": "tsx scripts/import-enugu-attendance.ts",
+    "db:import-enugu-missing": "tsx scripts/import-enugu-missing.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
