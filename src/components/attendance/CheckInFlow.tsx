@@ -28,6 +28,25 @@ interface CheckInResult {
   sessionName: string;
 }
 
+interface AttendanceHistoryItem {
+  sessionId: string;
+  sessionName: string;
+  date: string;
+  attended: boolean;
+  checkInTime: string | null;
+  verificationStatus: string | null;
+}
+
+interface AttendanceHistoryData {
+  summary: {
+    totalSessions: number;
+    attended: number;
+    missed: number;
+    attendanceRate: number;
+  };
+  history: AttendanceHistoryItem[];
+}
+
 type Step = "ENTER_ID" | "CONFIRM_RECORD" | "SUCCESS";
 
 const GLASS: React.CSSProperties = {
@@ -51,6 +70,8 @@ export default function CheckInFlow({
   const [result, setResult] = useState<CheckInResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [attendanceData, setAttendanceData] = useState<AttendanceHistoryData | null>(null);
+  const [loadingHistory, setLoadingHistory] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -86,6 +107,22 @@ export default function CheckInFlow({
     }
   }
 
+  async function fetchHistory(applicationId: string) {
+    setLoadingHistory(true);
+    try {
+      const res = await fetch(
+        `/api/attendance/student/${encodeURIComponent(applicationId)}?token=${encodeURIComponent(qrToken)}`
+      );
+      if (res.ok) {
+        setAttendanceData(await res.json());
+      }
+    } catch (err) {
+      console.error("Failed to fetch attendance history", err);
+    } finally {
+      setLoadingHistory(false);
+    }
+  }
+
   async function handleClockIn() {
     if (!student) return;
     setError("");
@@ -103,6 +140,7 @@ export default function CheckInFlow({
     if (res.ok) {
       setResult(data.data);
       setStep("SUCCESS");
+      fetchHistory(student.applicationId);
     } else if (res.status === 409) {
       setError("already_checked_in");
     } else if (res.status === 410) {
@@ -112,8 +150,15 @@ export default function CheckInFlow({
     }
   }
 
-  if (step === "SUCCESS" && result) {
-    return <SuccessScreen result={result} />;
+  if (step === "SUCCESS" && result && student) {
+    return (
+      <SuccessScreen
+        result={result}
+        student={student}
+        attendanceData={attendanceData}
+        loadingHistory={loadingHistory}
+      />
+    );
   }
 
   return (
@@ -345,7 +390,17 @@ function InfoChip({ label, value }: { label: string; value: string }) {
   );
 }
 
-function SuccessScreen({ result }: { result: CheckInResult }) {
+function SuccessScreen({
+  result,
+  student,
+  attendanceData,
+  loadingHistory,
+}: {
+  result: CheckInResult;
+  student: StudentRecord;
+  attendanceData: AttendanceHistoryData | null;
+  loadingHistory: boolean;
+}) {
   const checkInDate = new Date(result.checkInTime);
 
   const timeStr = checkInDate.toLocaleTimeString("en-NG", {
@@ -360,8 +415,14 @@ function SuccessScreen({ result }: { result: CheckInResult }) {
     year: "numeric",
   });
 
+  const initials = student.fullName
+    .split(" ")
+    .map((n) => n[0])
+    .slice(0, 2)
+    .join("");
+
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-[420px]">
         <div className="flex justify-center mb-3">
           <img
@@ -426,11 +487,150 @@ function SuccessScreen({ result }: { result: CheckInResult }) {
           <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
             {result.sessionName}
           </p>
-
-          <p className="text-sm font-medium mt-6" style={{ color: "rgba(255,255,255,0.45)" }}>
-            You may close this page.
-          </p>
         </div>
+
+        {/* Student info card */}
+        <div
+          className="rounded-2xl p-4 mt-4"
+          style={{
+            background: "rgba(255,255,255,0.08)",
+            border: "1px solid rgba(255,255,255,0.15)",
+          }}
+        >
+          <div className="flex items-center gap-3">
+            <div
+              className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0"
+              style={{ backgroundColor: "#0E7C7B" }}
+            >
+              <span className="text-white font-bold text-sm">{initials}</span>
+            </div>
+            <div className="min-w-0">
+              <p className="text-white font-semibold text-sm truncate">
+                {student.fullName}
+              </p>
+              <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>
+                {student.applicationId} · {student.learningTrack}
+              </p>
+              <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+                {student.trainingLocation}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Attendance summary */}
+        {loadingHistory ? (
+          <div
+            className="rounded-2xl p-5 mt-4 text-center"
+            style={{
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.15)",
+            }}
+          >
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
+              Loading your attendance record…
+            </p>
+          </div>
+        ) : attendanceData ? (
+          <>
+            <div className="grid grid-cols-3 gap-2 mt-4">
+              <StatChip
+                value={attendanceData.summary.attended}
+                label="Attended"
+                color="#0E7C7B"
+              />
+              <StatChip
+                value={attendanceData.summary.missed}
+                label="Missed"
+                color="#f87171"
+              />
+              <StatChip
+                value={`${attendanceData.summary.attendanceRate}%`}
+                label="Rate"
+                color="#C9922A"
+              />
+            </div>
+
+            {attendanceData.history.length > 0 && (
+              <div
+                className="rounded-2xl mt-4 overflow-hidden"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                }}
+              >
+                <div
+                  className="px-4 py-3"
+                  style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
+                >
+                  <h3 className="text-white font-semibold text-sm">Recent Sessions</h3>
+                </div>
+                <div>
+                  {attendanceData.history.slice(0, 8).map((item, idx) => (
+                    <div
+                      key={item.sessionId}
+                      className="flex items-center gap-3 px-4 py-3"
+                      style={{
+                        borderTop: idx === 0 ? "none" : "1px solid rgba(255,255,255,0.06)",
+                      }}
+                    >
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{
+                          backgroundColor: item.attended
+                            ? "rgba(14,124,123,0.2)"
+                            : "rgba(248,113,113,0.2)",
+                        }}
+                      >
+                        {item.attended ? (
+                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="#0E7C7B" strokeWidth={3}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        ) : (
+                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="#f87171" strokeWidth={3}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        )}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-white text-xs font-semibold truncate">
+                          {item.sessionName}
+                        </p>
+                        <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+                          {new Date(item.date).toLocaleDateString("en-NG", {
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          })}
+                          {item.checkInTime &&
+                            ` · ${new Date(item.checkInTime).toLocaleTimeString("en-NG", {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })}`}
+                        </p>
+                      </div>
+                      <span
+                        className="text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0"
+                        style={{
+                          backgroundColor: item.attended
+                            ? "rgba(14,124,123,0.2)"
+                            : "rgba(248,113,113,0.2)",
+                          color: item.attended ? "#0E7C7B" : "#f87171",
+                        }}
+                      >
+                        {item.attended ? "Present" : "Absent"}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
+        ) : null}
+
+        <p className="text-sm font-medium text-center mt-6" style={{ color: "rgba(255,255,255,0.45)" }}>
+          You may close this page.
+        </p>
 
         <p className="text-xs text-center mt-4" style={{ color: "rgba(255,255,255,0.3)" }}>
           ICBM-AttendX · Secure Attendance System
@@ -443,6 +643,33 @@ function SuccessScreen({ result }: { result: CheckInResult }) {
           to   { transform: scale(1); opacity: 1; }
         }
       `}</style>
+    </div>
+  );
+}
+
+function StatChip({
+  value,
+  label,
+  color,
+}: {
+  value: number | string;
+  label: string;
+  color: string;
+}) {
+  return (
+    <div
+      className="rounded-xl p-3 text-center"
+      style={{
+        backgroundColor: `${color}26`,
+        border: `1px solid ${color}33`,
+      }}
+    >
+      <p className="font-bold text-xl" style={{ color }}>
+        {value}
+      </p>
+      <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>
+        {label}
+      </p>
     </div>
   );
 }

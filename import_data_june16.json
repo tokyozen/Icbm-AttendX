@@ -1,0 +1,254 @@
+{
+  "sessions": [
+    {
+      "session_name": "Selling Smarter: Finding Clients & Selling Price",
+      "session_code": "0CPLVP",
+      "instructor": "Nwabueze Valentine Kwazu",
+      "date": "2026-06-16",
+      "records": [
+        {
+          "app_id": "APP-2025-49543",
+          "name": "Abdullahi Aminat lami",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:18 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-44178",
+          "name": "Victoria Motunrayo Ehinmodu",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:18 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-57886",
+          "name": "Ugwuja Tochukwu Joseph Prague",
+          "gender": "MALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Enugu",
+          "check_in_time": "08:18 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-65488",
+          "name": "OKOYE MARY CHIKA",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Enugu",
+          "check_in_time": "08:18 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2026-26878",
+          "name": "ORFEGA TIMOTHY TERVER",
+          "gender": "MALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:18 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-24820",
+          "name": "ASHIPU PETRONELLIA UGIOHAUNIM",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:18 am",
+          "device": "Desktop",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-93314",
+          "name": "Loveth Ujunwa Enemchukwu",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:18 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-17163",
+          "name": "NGOZI ANTHONIA CHUKWUEJIM",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:18 am",
+          "device": "Desktop",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-34990",
+          "name": "Uwom Onyinyechi Lilian",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:18 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-87668",
+          "name": "Maren Joy Ayuba",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:19 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-34780",
+          "name": "Anthony Jennifer Chioma",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:19 am",
+          "device": "Mobile",
+          "browser": "Safari",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-54629",
+          "name": "Christian Chiamaka Joyce",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:19 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-14859",
+          "name": "Grace Boniface Willie",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:19 am",
+          "device": "Mobile",
+          "browser": "Safari",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-39030",
+          "name": "Obiesie Eric Chinonso",
+          "gender": "MALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Enugu",
+          "check_in_time": "08:19 am",
+          "device": "Desktop",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-90220",
+          "name": "Stephanie Jerome bute",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:20 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2026-25318",
+          "name": "Perpetua Peninah Peter",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:20 am",
+          "device": "Mobile",
+          "browser": "Safari",
+          "verification_status": "FLAGGED"
+        },
+        {
+          "app_id": "APP-2025-45447",
+          "name": "Godiya Samson Gajere",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:20 am",
+          "device": "Mobile",
+          "browser": "Safari",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-71679",
+          "name": "Ilyas Maryam Abisola",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:23 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-37882",
+          "name": "FAITH YOHANNA ADAMU",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:42 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "FLAGGED"
+        },
+        {
+          "app_id": "APP-2025-32348",
+          "name": "Vivian Nkechi Innocent",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "08:59 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-81446",
+          "name": "FAVOUR CYNTHIA OMOLE",
+          "gender": "FEMALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "10:53 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        },
+        {
+          "app_id": "APP-2025-69599",
+          "name": "Jack King chimzuruoke",
+          "gender": "MALE",
+          "track": "Business Process & Outsourcing (BPO)",
+          "location": "Abuja",
+          "check_in_time": "10:54 am",
+          "device": "Mobile",
+          "browser": "Chrome",
+          "verification_status": "VERIFIED"
+        }
+      ]
+    }
+  ]
+}
