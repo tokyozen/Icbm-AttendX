@@ -30,6 +30,10 @@ export async function GET(
     where: {
       learningTrack: student.learningTrack,
       status: { in: ["CLOSED", "EXPIRED"] },
+      OR: [
+        { location: student.trainingLocation },
+        { location: "Both Campuses" },
+      ],
     },
     orderBy: { startedAt: "desc" },
   });

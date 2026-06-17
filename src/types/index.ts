@@ -80,6 +80,7 @@ export const LEARNING_TRACKS = [
 export const TRAINING_LOCATIONS = [
   "Abuja",
   "Enugu",
+  "Both Campuses",
 ] as const;
 
 export type LearningTrack = (typeof LEARNING_TRACKS)[number];
