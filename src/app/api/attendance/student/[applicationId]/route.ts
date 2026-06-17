@@ -32,13 +32,11 @@ export async function GET(
       status: { in: ["CLOSED", "EXPIRED"] },
     },
     orderBy: { startedAt: "desc" },
-    take: 30,
   });
 
   const attendanceRecords = await prisma.attendanceRecord.findMany({
     where: { studentId: student.id },
     orderBy: { checkInTime: "desc" },
-    take: 30,
   });
 
   const recordsBySessionId = new Map(attendanceRecords.map((r) => [r.sessionId, r]));
@@ -75,6 +73,6 @@ export async function GET(
       missed,
       attendanceRate: rate,
     },
-    history: history.slice(0, 10),
+    history,
   });
 }

@@ -401,6 +401,7 @@ function SuccessScreen({
   attendanceData: AttendanceHistoryData | null;
   loadingHistory: boolean;
 }) {
+  const [showAll, setShowAll] = useState(false);
   const checkInDate = new Date(result.checkInTime);
 
   const timeStr = checkInDate.toLocaleTimeString("en-NG", {
@@ -566,7 +567,7 @@ function SuccessScreen({
                   <h3 className="text-white font-semibold text-sm">Recent Sessions</h3>
                 </div>
                 <div>
-                  {attendanceData.history.slice(0, 8).map((item, idx) => (
+                  {(showAll ? attendanceData.history : attendanceData.history.slice(0, 5)).map((item, idx) => (
                     <div
                       key={item.sessionId}
                       className="flex items-center gap-3 px-4 py-3"
@@ -623,6 +624,20 @@ function SuccessScreen({
                     </div>
                   ))}
                 </div>
+                {attendanceData.history.length > 5 && (
+                  <button
+                    onClick={() => setShowAll((prev) => !prev)}
+                    className="w-full py-3 text-xs font-semibold transition-colors"
+                    style={{
+                      color: "#0E7C7B",
+                      borderTop: "1px solid rgba(255,255,255,0.06)",
+                    }}
+                  >
+                    {showAll
+                      ? "↑ Show Less"
+                      : `↓ Show All ${attendanceData.history.length} Sessions`}
+                  </button>
+                )}
               </div>
             )}
           </>
