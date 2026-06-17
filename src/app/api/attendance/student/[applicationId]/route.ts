@@ -45,13 +45,14 @@ export async function GET(
 
   const history = allSessions.map((session) => {
     const record = recordsBySessionId.get(session.id);
+    const attended = !!record && !record.isAbsent;
     return {
       sessionId: session.id,
       sessionName: session.sessionName,
       date: session.startedAt,
-      attended: !!record,
-      checkInTime: record?.checkInTime ?? null,
-      verificationStatus: record?.verificationStatus ?? null,
+      attended,
+      checkInTime: attended ? record?.checkInTime ?? null : null,
+      verificationStatus: attended ? record?.verificationStatus ?? null : null,
     };
   });
 

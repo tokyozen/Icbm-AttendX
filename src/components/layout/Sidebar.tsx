@@ -73,6 +73,21 @@ const NAV = [
     ),
     adminOnly: true,
   },
+  {
+    label: "Attendance Override",
+    href: "/attendance/override",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    ),
+    adminOnly: true,
+    superAdminOnly: true,
+  },
 ];
 
 const BLOB_KEYFRAMES = `
@@ -217,9 +232,10 @@ function NavLinks({
   onNavigate?: () => void;
 }) {
   const isAdmin = user.role === "SUPER_ADMIN" || user.role === "ADMIN";
+  const isSuperAdmin = user.role === "SUPER_ADMIN";
   return (
     <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
-      {NAV.filter((item) => !item.adminOnly || isAdmin).map((item) => {
+      {NAV.filter((item) => (!item.adminOnly || isAdmin) && (!item.superAdminOnly || isSuperAdmin)).map((item) => {
         const active = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
         return (
           <Link

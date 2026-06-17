@@ -108,6 +108,11 @@ model AttendanceRecord {
   verificationStatus VerificationStatus @default(PENDING) @map("verification_status")
   verifiedAt         DateTime?          @map("verified_at")
   verifiedBy         String?            @map("verified_by")
+  isManualOverride   Boolean            @default(false) @map("is_manual_override")
+  overrideReason     String?            @map("override_reason")
+  overriddenBy       String?            @map("overridden_by")
+  overriddenAt       DateTime?          @map("overridden_at")
+  isAbsent           Boolean            @default(false) @map("is_absent")
   createdAt          DateTime           @default(now()) @map("created_at")
 
   session TrainingSession @relation(fields: [sessionId], references: [id])
