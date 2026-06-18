@@ -36,6 +36,8 @@ export default function SessionsClient({ initialSessions, userRole }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>("ALL");
   const [endingId, setEndingId] = useState<string | null>(null);
   const [confirmEndId, setConfirmEndId] = useState<string | null>(null);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [confirmDelete, setConfirmDelete] = useState<{ id: string; name: string } | null>(null);
 
   const loadSessions = useCallback(async () => {
     const res = await fetch("/api/sessions?limit=100");
@@ -51,6 +53,23 @@ export default function SessionsClient({ initialSessions, userRole }: Props) {
     setEndingId(null);
     setConfirmEndId(null);
     if (res.ok) loadSessions();
+  }
+
+  async function handleDelete(id: string) {
+    setDeletingId(id);
+    try {
+      const res = await fetch(`/api/sessions/${id}`, { method: "DELETE" });
+      if (res.ok) {
+        setSessions((prev) => prev.filter((s) => s.id !== id));
+        setConfirmDelete(null);
+      } else {
+        alert("Failed to delete session");
+      }
+    } catch {
+      alert("Failed to delete session");
+    } finally {
+      setDeletingId(null);
+    }
   }
 
   const filtered =
@@ -249,10 +268,62 @@ export default function SessionsClient({ initialSessions, userRole }: Props) {
                       Verify &amp; Export
                     </Link>
                   )}
+                  {!confirming && userRole === "SUPER_ADMIN" && (
+                    <button
+                      onClick={() => setConfirmDelete({ id: s.id, name: s.sessionName })}
+                      className="p-1.5 rounded-lg transition-colors"
+                      style={{ color: "#fca5a5" }}
+                      title="Delete session"
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                    </button>
+                  )}
                 </div>
               </div>
             );
           })}
+        </div>
+      )}
+
+      {confirmDelete && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center px-4"
+          style={{ background: "rgba(15,30,53,0.7)", backdropFilter: "blur(4px)" }}
+        >
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6">
+            <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: "#fee2e2" }}>
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#ef4444" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-black mb-2" style={{ color: "#0F1E35" }}>Delete Session</h3>
+            <p className="text-sm mb-1" style={{ color: "#64748b" }}>You are about to delete:</p>
+            <p className="font-semibold mb-4" style={{ color: "#0F1E35" }}>&quot;{confirmDelete.name}&quot;</p>
+            <p className="text-sm mb-6" style={{ color: "#ef4444" }}>
+              This will permanently delete the session and all its attendance records. This cannot be undone.
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setConfirmDelete(null)}
+                className="flex-1 px-4 py-3 border-2 font-semibold rounded-xl transition-colors"
+                style={{ borderColor: "#E2E8F0", color: "#64748b" }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => handleDelete(confirmDelete.id)}
+                disabled={deletingId === confirmDelete.id}
+                className="flex-1 px-4 py-3 text-white font-semibold rounded-xl transition-colors disabled:opacity-50"
+                style={{ backgroundColor: "#ef4444" }}
+              >
+                {deletingId === confirmDelete.id ? "Deleting…" : "Yes, Delete"}
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
