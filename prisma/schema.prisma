@@ -51,6 +51,9 @@ model User {
 
   sessions TrainingSession[]
 
+  @@index([role])
+  @@index([isActive])
+  @@index([role, isActive])
   @@map("users")
 }
 
@@ -69,6 +72,10 @@ model Student {
 
   attendanceRecords AttendanceRecord[]
 
+  @@index([learningTrack])
+  @@index([trainingLocation])
+  @@index([learningTrack, trainingLocation])
+  @@index([isActive])
   @@map("students")
 }
 
@@ -89,6 +96,13 @@ model TrainingSession {
   instructor        User               @relation(fields: [instructorId], references: [id])
   attendanceRecords AttendanceRecord[]
 
+  @@index([instructorId])
+  @@index([status])
+  @@index([learningTrack])
+  @@index([location])
+  @@index([learningTrack, status])
+  @@index([location, status])
+  @@index([startedAt])
   @@map("training_sessions")
 }
 
@@ -119,5 +133,11 @@ model AttendanceRecord {
   student Student         @relation(fields: [studentId], references: [id])
 
   @@unique([sessionId, studentId])
+  @@index([studentId])
+  @@index([sessionId])
+  @@index([checkInTime])
+  @@index([learningTrack])
+  @@index([studentId, sessionId])
+  @@index([studentId, checkInTime])
   @@map("attendance_records")
 }
