@@ -127,16 +127,30 @@ export default function ApiKeysClient() {
             Manage keys used by external LMS integrations to pull attendance data.
           </p>
         </div>
-        <button
-          onClick={openCreate}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-white"
-          style={{ backgroundColor: "#0E7C7B" }}
-        >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-          </svg>
-          Generate New Key
-        </button>
+        <div className="flex items-center gap-3">
+          <a
+            href="/api-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold border-2"
+            style={{ borderColor: "#0E7C7B", color: "#0E7C7B" }}
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13M9 5.5C7.5 4.5 5 4 3 4.5v13c2-.5 4.5 0 6 1m0-13c1.5-1 4-1.5 6-1.5v13c-2-.5-4.5 0-6 1" />
+            </svg>
+            Documentation
+          </a>
+          <button
+            onClick={openCreate}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-white"
+            style={{ backgroundColor: "#0E7C7B" }}
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+            Generate New Key
+          </button>
+        </div>
       </div>
 
       {/* Table */}
