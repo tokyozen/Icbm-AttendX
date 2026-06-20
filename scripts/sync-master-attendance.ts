@@ -68,6 +68,7 @@ async function main() {
     where: { email: 'system@icbm-attendx.com' }
   })
   if (!systemUser) throw new Error('System user not found. Run initial import first.')
+  const systemUserId: string = systemUser.id
 
   const dataPath = path.join(__dirname, '../final_attendance_data.json')
   const students: Array<{
@@ -121,7 +122,7 @@ async function main() {
         sessionCode: generateSessionCode(),
         location: 'Both Campuses',
         learningTrack: track,
-        instructorId: systemUser.id,
+        instructorId: systemUserId,
         qrToken: generateToken(),
         startedAt: dateObj,
         expiresAt: new Date(`${date}T17:00:00.000Z`),
@@ -201,10 +202,10 @@ async function main() {
               browser: 'N/A',
               verificationStatus: 'VERIFIED',
               verifiedAt: new Date(`${date}T17:00:00.000Z`),
-              verifiedBy: systemUser.id,
+              verifiedBy: systemUserId,
               isManualOverride: true,
               overrideReason: 'Imported from corrected master attendance sheet',
-              overriddenBy: systemUser.id,
+              overriddenBy: systemUserId,
               overriddenAt: new Date(),
               isAbsent: false,
             },
@@ -212,11 +213,11 @@ async function main() {
               isAbsent: false,
               isManualOverride: true,
               overrideReason: 'Updated from corrected master attendance sheet',
-              overriddenBy: systemUser.id,
+              overriddenBy: systemUserId,
               overriddenAt: new Date(),
               verificationStatus: 'VERIFIED',
               verifiedAt: new Date(`${date}T17:00:00.000Z`),
-              verifiedBy: systemUser.id,
+              verifiedBy: systemUserId,
             }
           })
           recordsPresent++
@@ -236,7 +237,7 @@ async function main() {
                 isAbsent: true,
                 isManualOverride: true,
                 overrideReason: 'Marked absent in corrected master attendance sheet',
-                overriddenBy: systemUser.id,
+                overriddenBy: systemUserId,
                 overriddenAt: new Date(),
               }
             })

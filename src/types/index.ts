@@ -8,6 +8,7 @@ export interface SessionUser {
   email: string;
   role: Role;
   location?: string | null;
+  learningTrack?: string | null;
 }
 
 export interface StudentRecord {

@@ -36,6 +36,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           email: user.email,
           role: user.role,
           location: user.location,
+          learningTrack: user.learningTrack,
         };
       },
     }),
@@ -47,6 +48,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.id = user.id;
         token.role = (user as any).role;
         token.location = (user as any).location;
+        token.learningTrack = (user as any).learningTrack;
       }
       return token;
     },
@@ -55,6 +57,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         session.user.id = token.id as string;
         (session.user as any).role = token.role;
         (session.user as any).location = token.location;
+        (session.user as any).learningTrack = token.learningTrack;
       }
       return session;
     },
