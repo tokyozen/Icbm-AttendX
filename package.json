@@ -19,12 +19,15 @@
     "postinstall": "prisma generate",
     "db:import-history": "tsx scripts/import-historical-attendance.ts",
     "db:import-enugu": "tsx scripts/import-enugu-attendance.ts",
-    "db:import-enugu-missing": "tsx scripts/import-enugu-missing.ts"
+    "db:import-enugu-missing": "tsx scripts/import-enugu-missing.ts",
+    "generate-master": "tsx scripts/generate-master-attendance.ts",
+    "sync-master": "tsx scripts/sync-master-attendance.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
     "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
+    "exceljs": "^4.4.0",
     "jspdf": "^4.2.1",
     "jspdf-autotable": "^5.0.8",
     "next": "^15.5.19",
