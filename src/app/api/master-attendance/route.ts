@@ -31,16 +31,16 @@ export async function GET(request: Request) {
   const sessions = await prisma.trainingSession.findMany({
     where: sessionWhere,
     orderBy: { startedAt: "asc" },
-    select: { id: true, learningTrack: true, startedAt: true },
+    select: { id: true, learningTrack: true, startedAt: true, location: true },
   });
 
   // Deduplicate sessions by date+track — multiple sessions same day/track = one column
-  const dateTrackMap = new Map<string, string[]>();
+  const dateTrackMap = new Map<string, { sessionIds: string[]; location: string }>();
   for (const s of sessions) {
     const date = s.startedAt.toISOString().split("T")[0];
     const key = `${date}|${s.learningTrack}`;
-    if (!dateTrackMap.has(key)) dateTrackMap.set(key, []);
-    dateTrackMap.get(key)!.push(s.id);
+    if (!dateTrackMap.has(key)) dateTrackMap.set(key, { sessionIds: [], location: s.location });
+    dateTrackMap.get(key)!.sessionIds.push(s.id);
   }
 
   const allDates = [...new Set(sessions.map((s) => s.startedAt.toISOString().split("T")[0]))].sort();
@@ -87,8 +87,18 @@ export async function GET(request: Request) {
         continue;
       }
 
+      const applies =
+        entry.location === "Both Campuses" ||
+        entry.location === student.trainingLocation ||
+        student.trainingLocation === "Both Campuses";
+
+      if (!applies) {
+        attendance[date] = { status: "no-session" };
+        continue;
+      }
+
       totalSessions++;
-      const found = entry.map((sid) => recordMap.get(`${student.id}|${sid}`)).find((r) => r !== undefined);
+      const found = entry.sessionIds.map((sid) => recordMap.get(`${student.id}|${sid}`)).find((r) => r !== undefined);
 
       if (found) {
         daysPresent++;
