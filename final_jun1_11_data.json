@@ -1,0 +1,4916 @@
+[
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-15781",
+    "name": "Gimba Hilary Peter",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-24950",
+    "name": "Golwa Simon Adamu",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-42390",
+    "name": "Mbisike Emmanuel Chisom",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-83949",
+    "name": "Olawale Samuel Babatunde",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-77268",
+    "name": "Oloruntoba Abdur-Rahman Olaniyi",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-56462",
+    "name": "TERHEMBA JASON IERVE",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-14904",
+    "name": "Yunnaan Kaspak lektei",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2026-11573",
+    "name": "ZHIRI, JAMES YAUSMAN",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-24820",
+    "name": "ASHIPU PETRONELLIA UGIOHAUNIM",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-49543",
+    "name": "Abdullahi Aminat lami",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-34780",
+    "name": "Anthony Jennifer Chioma",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-54629",
+    "name": "Christian Chiamaka Joyce",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-93666",
+    "name": "Egwu Veronica Eleje",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-37882",
+    "name": "FAITH YOHANNA ADAMU",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-81446",
+    "name": "FAVOUR CYNTHIA OMOLE",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-45447",
+    "name": "Godiya Samson Gajere",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-75859",
+    "name": "Godwin Iganga ODE",
+    "gender": "M",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-14859",
+    "name": "Grace Boniface Willie",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-30534",
+    "name": "Hakeem Rabiu",
+    "gender": "M",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-71679",
+    "name": "Ilyas Maryam Abisola",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-69599",
+    "name": "Jack King chimzuruoke",
+    "gender": "M",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-93314",
+    "name": "Loveth Ujunwa Enemchukwu",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-87668",
+    "name": "Maren Joy Ayuba",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-17163",
+    "name": "NGOZI ANTHONIA CHUKWUEJIM",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2026-26878",
+    "name": "ORFEGA TIMOTHY TERVER",
+    "gender": "M",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-99838",
+    "name": "Omonon chidi Nwafor",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2026-25318",
+    "name": "Perpetua Peninah Peter",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-75491",
+    "name": "Precious Ehi Okpe",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-90220",
+    "name": "Stephanie Jerome bute",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-34990",
+    "name": "Uwom Onyinyechi Lilian",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-44178",
+    "name": "Victoria Motunrayo Ehinmodu",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-32348",
+    "name": "Vivian Nkechi Innocent",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-22016",
+    "name": "Abalu Onochie Norbert",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2026-93703",
+    "name": "Abdul Bangura",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-41414",
+    "name": "Adenike Ruth Adigun",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-33919",
+    "name": "Adikwu Emmanuel Oche",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-66437",
+    "name": "Agwo Inalegwu James",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-58976",
+    "name": "Aigbomian Charles Ehime",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-54796",
+    "name": "Aliko Magaji Doma",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-93545",
+    "name": "Ameka David Ayiwulu",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-52711",
+    "name": "Amos Ibrahim",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-31276",
+    "name": "Anthony Celestine Aruma",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-76783",
+    "name": "Atsomhe Augustina Atsosimhe",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-97776",
+    "name": "CHIOMA GRACE UNAMBA",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-38550",
+    "name": "Chidiebere Philip Chukwukere",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-28519",
+    "name": "Chinonso Iheanyichukwu Ogunedo",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-18199",
+    "name": "Daniel Zibom Duniya",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-66447",
+    "name": "Dauda Modupe Sonia",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-38215",
+    "name": "David Chukwu",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-88523",
+    "name": "Davies Godstime Chukwuike",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-32112",
+    "name": "Emmanuel Yohanna Kwedo",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-60119",
+    "name": "Francisca Alphonsus",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-23100",
+    "name": "Friday Iji Ogbaka",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-70826",
+    "name": "Gyang Michael Rwang",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-41626",
+    "name": "Igwe Emmanuel Dominic",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-94361",
+    "name": "Ikwulono Ene Patience",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-45066",
+    "name": "Iriemenem Collins Chibuzor",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-78827",
+    "name": "JIBRIN MOSES",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-34676",
+    "name": "KALADI, Hassan Daniel",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-88403",
+    "name": "Kenneth Isah Bello",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-35166",
+    "name": "Martin Akumba",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-26276",
+    "name": "Mercy Edem Udongo",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-69302",
+    "name": "Msughter Matthew ABAA",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-69589",
+    "name": "Musa Audu",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-38532",
+    "name": "Nenrangtin Yafet Wakyur",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2026-36860",
+    "name": "Odimegwu Chinemerem Emmanuel",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-52629",
+    "name": "Okeke Geraldine Chidimma",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-74955",
+    "name": "Okwudili Collins Chiweluotito",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-25041",
+    "name": "Olom Gabriel Otogbo",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-63342",
+    "name": "Oluwaseun Stephen Adeoti",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-16645",
+    "name": "Onyenwe Godswill Okoludoh",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-91994",
+    "name": "Oyatogun Oluwaseun Samuel",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-93042",
+    "name": "Peter Egahi Okwoli",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-35072",
+    "name": "Peter Odili",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-46528",
+    "name": "Racheal Achele Ibidun",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-21642",
+    "name": "Raymond Peter Bagwam",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-20757",
+    "name": "Sakinah Abubakar",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-68897",
+    "name": "Samuel Igbomiye",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-62468",
+    "name": "Sulaiman Yusuf Ali",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2026-73285",
+    "name": "Theophilus Danjuma Matthew",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-14288",
+    "name": "UGBEDE OGAH OMALE",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-18172",
+    "name": "Yakubu Mohammed Elijah",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-91451",
+    "name": "ABUH SAMUEL",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-40262",
+    "name": "Abdulsalam Omale",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-77019",
+    "name": "Abraham Tare Musa",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-71664",
+    "name": "Agbe Sunday Ekpong",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": false,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2026-42480",
+    "name": "Benjamin Jackson",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-92876",
+    "name": "Boboye Daniel Oluwatobi",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-97610",
+    "name": "Chukwu Esther",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-77574",
+    "name": "Hareerah Musa Basah",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-13600",
+    "name": "Muhammad Aminu Isah",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-79896",
+    "name": "Ogbulaba John",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-91795",
+    "name": "Peace Ojochenemi Moses",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-37876",
+    "name": "SALEH JABIR",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-87519",
+    "name": "SALOME KOBA WELE",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-84030",
+    "name": "Thomas Justin Eneojo",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-89099",
+    "name": "Veronica orok Etim",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-45655",
+    "name": "Binta Lawrence",
+    "gender": "F",
+    "track": "Software Development",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-80547",
+    "name": "Ebute Abraham Ameh",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": false,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-93742",
+    "name": "Jacob Chidi Eugene",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-72628",
+    "name": "Kasiemobi Janfrancis Eke",
+    "gender": "F",
+    "track": "Software Development",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-98101",
+    "name": "Micah Bulus Joshua",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-62135",
+    "name": "Ogbole Rhoda",
+    "gender": "F",
+    "track": "Software Development",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-16991",
+    "name": "Osho Elizabeth Kemi",
+    "gender": "F",
+    "track": "Software Development",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Abuja",
+    "app_id": "APP-2025-51904",
+    "name": "Williamson Akumba Mson",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Abuja",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-43489",
+    "name": "Divine Chikeluba",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-71566",
+    "name": "Duru Michael",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-20468",
+    "name": "Ikechukwu Benedict Onyia",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-89493",
+    "name": "Julius Iroha Azinkpali",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-24882",
+    "name": "Madu Miracle Kosi",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-49616",
+    "name": "NZE CHIMAMKPAM EJIMOFOR",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2026-11010",
+    "name": "Simon Nnaji",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-55680",
+    "name": "Vladimir Ezennia Augunnamani",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-72305",
+    "name": "Alummona Kenechi C.",
+    "gender": "M",
+    "track": "Ai & Machine Learning",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-39428",
+    "name": "EGBO CHRISTIAN UGOCHUKWU",
+    "gender": "M",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-72292",
+    "name": "Leonard destiny chika",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-96362",
+    "name": "Nweke Jennifer chikaodili",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-22488",
+    "name": "Nzewi Chidumebi Bianca",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-65488",
+    "name": "OKOYE MARY CHIKA",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-39030",
+    "name": "Obiesie Eric Chinonso",
+    "gender": "M",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025\u201338454",
+    "name": "Odo Patience Amuchechukwu",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-63195",
+    "name": "Onah Edith Ebubechi",
+    "gender": "F",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-57886",
+    "name": "Ugwuja Tochukwu Joseph Prague",
+    "gender": "M",
+    "track": "Business Process & Outsourcing (BPO)",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-49650",
+    "name": "ADIBE PRISCILLIA IFEBUCHE",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-72305",
+    "name": "ALUMONA CHRISTIAN KENECHI",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-11313",
+    "name": "Agu Uchechukwu Joy",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-71815",
+    "name": "Akuma David Okafor",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-83404",
+    "name": "Ali Somtochukwu Prosper",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-75099",
+    "name": "Aneke Precious Somtochukwu",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-16665",
+    "name": "Ani Humphery Nnamdi",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-37168",
+    "name": "Animba Chukwunonso Ewoh",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-93867",
+    "name": "Chekwube Nze Ejimofor",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-98249",
+    "name": "Chibuike Kosisochukwu Mercy",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-65645",
+    "name": "Chidiebere Emmanuel Ugwu",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-60043",
+    "name": "Chidozie Ebere Georgina",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": false,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2026-59865",
+    "name": "Chiedozie Odo",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-85136",
+    "name": "Chime Sampson",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-32350",
+    "name": "Chukwu Kingsley Arinze",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-76491",
+    "name": "Chukwuma Chiamaka Charity",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": false,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": false,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-36145",
+    "name": "EYA VICTORIA NKENWABUCHUKWU",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-47268",
+    "name": "Ezeh Esther Uwanekwu",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-62512",
+    "name": "Ibe, Nkemakolam Jane",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-66774",
+    "name": "Ifedinkor obinna",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": false,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-19124",
+    "name": "Nnakaihe CHINAGOROM Augustine",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-22972",
+    "name": "Nwabuisi Uchenna",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": false,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2026-51858",
+    "name": "Nwokeabia Okwor Ogochukwu Precious",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-88303",
+    "name": "Nwokolo onyedika Livinus",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-11350",
+    "name": "ODUMEGBO KOSISOCHUKWU CHIBUOKE",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2026-33648",
+    "name": "OKULI CHINENYE LETICIA",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-93920",
+    "name": "OTUBELU PEACE CHIDIEBUBE",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": false,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-89080",
+    "name": "OZOCHIKELU DORATHY NKECHI",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-87894",
+    "name": "Obiefuna ikenna paschal",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-64157",
+    "name": "Okoye Ezinne Chidera",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-40352",
+    "name": "Onoh Chinwendu Miracle",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-16556",
+    "name": "Onwe chinedu Joshua",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-94056",
+    "name": "Onyia chidozie Alvin",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-38598",
+    "name": "Osakwe ifechukwu",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-29785",
+    "name": "PATRICK ONWURAH",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-51343",
+    "name": "Susan Chidera Chukwuemeka",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-80116",
+    "name": "Torty Jennifer",
+    "gender": "F",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-22475",
+    "name": "UCHE PETER UCHE",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-63917",
+    "name": "UCHENDU IKECHUKWU CAJETAN",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-97369",
+    "name": "Udeigwe Ebubechukw Clinton",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2026-73311",
+    "name": "Uwakwe Chukwuebuka Paul",
+    "gender": "M",
+    "track": "Cybersecurity",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-29118",
+    "name": "AFONNE CHINWENDU NANCY",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-82521",
+    "name": "Blessing Sharon Obi",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2026-31767",
+    "name": "Chukwu Amaka Agatha",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-85692",
+    "name": "Emelda Ibuchukwum Ahuruezenma",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-10297",
+    "name": "Nnaji Chinasa",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-34581",
+    "name": "Nwana Okechukwu Chukwuebuka",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-44962",
+    "name": "ONWUEMELIE OBIANUJU GLORIA",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-37314",
+    "name": "ORJICHUKWUDE LYDIA CHINENYE",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-89048",
+    "name": "Ojukwu-Okpeze chidozie",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-48892",
+    "name": "Orjiezema Chioma Rejoice",
+    "gender": "F",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": false,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-46736",
+    "name": "Prosper Chisom Nwachukwu",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-56393",
+    "name": "Udeh Ogbonnaya Cletus",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": false,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-26949",
+    "name": "Ugwuanyi Collins Uwakwe",
+    "gender": "M",
+    "track": "Project Management",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-68763",
+    "name": "Chidimma Francisca Ikechukwu",
+    "gender": "F",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-92373",
+    "name": "Elobuike Ekene Emmanuel",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": false,
+      "2026-06-04": false,
+      "2026-06-05": true,
+      "2026-06-08": false,
+      "2026-06-09": false,
+      "2026-06-10": false,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-64699",
+    "name": "Martins Chidiebere Ekwueme",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": false,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-64405",
+    "name": "Nweze Jacob Ndubuisi",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-47595",
+    "name": "Obasi Chukwudi",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-79785",
+    "name": "Odumegbo chiamaka juliet",
+    "gender": "F",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": false,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": false,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-22739",
+    "name": "Okafor Okechukwu Christopher",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": false,
+      "2026-06-17": false,
+      "2026-06-18": false,
+      "2026-06-19": false
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-22768",
+    "name": "Okechukwu Kingsley Chijioke",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-11349",
+    "name": "Onah kenneth Ekene",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-26752",
+    "name": "Orji Obumneme Melody",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": false,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-51424",
+    "name": "Otubelu Nancy Udochisom",
+    "gender": "F",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": false
+    },
+    "jun15_19": {
+      "2026-06-15": false,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  },
+  {
+    "campus": "Enugu",
+    "app_id": "APP-2025-24991",
+    "name": "Ucheme Petrus Chimobi",
+    "gender": "M",
+    "track": "Software Development",
+    "location": "Enugu",
+    "jun1_11": {
+      "2026-06-01": true,
+      "2026-06-02": true,
+      "2026-06-03": true,
+      "2026-06-04": true,
+      "2026-06-05": true,
+      "2026-06-08": true,
+      "2026-06-09": true,
+      "2026-06-10": true,
+      "2026-06-11": true
+    },
+    "jun15_19": {
+      "2026-06-15": true,
+      "2026-06-16": true,
+      "2026-06-17": true,
+      "2026-06-18": true,
+      "2026-06-19": true
+    }
+  }
+]
