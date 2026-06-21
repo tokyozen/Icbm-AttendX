@@ -83,11 +83,13 @@ export async function GET() {
   const attended = new Set(records.map((r) => `${r.studentId}|${r.sessionId}`));
 
   const dateTrackMap = new Map<string, string[]>();
+  const sessionLocationMap = new Map<string, string>();
   for (const s of sessions) {
     const dateKey = s.startedAt.toISOString().split("T")[0];
     const key = `${dateKey}|${s.learningTrack}`;
     if (!dateTrackMap.has(key)) dateTrackMap.set(key, []);
     dateTrackMap.get(key)!.push(s.id);
+    sessionLocationMap.set(s.id, s.location);
   }
 
   const allDates = [...new Set(sessions.map((s) => s.startedAt.toISOString().split("T")[0]))].sort();
@@ -170,7 +172,15 @@ export async function GET() {
         for (let d = 0; d < allDates.length; d++) {
           const cell = ws.getCell(rowNum, totalFixedCols + d + 1);
           const dtEntry = dateTrackMap.get(`${allDates[d]}|${student.learningTrack}`);
-          if (!dtEntry) {
+          const applies = dtEntry?.some((sid) => {
+            const sessionLocation = sessionLocationMap.get(sid) ?? "Both Campuses";
+            return (
+              sessionLocation === "Both Campuses" ||
+              sessionLocation === student.trainingLocation ||
+              student.trainingLocation === "Both Campuses"
+            );
+          });
+          if (!dtEntry || !applies) {
             applyCell(cell, "—", { bgColor: "FFE8E8E8", fontColor: "FFAAAAAA", hAlign: "center", fontSize: 9 });
             continue;
           }

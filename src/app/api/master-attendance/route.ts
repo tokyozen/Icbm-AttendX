@@ -35,12 +35,14 @@ export async function GET(request: Request) {
   });
 
   // Deduplicate sessions by date+track — multiple sessions same day/track = one column
-  const dateTrackMap = new Map<string, { sessionIds: string[]; location: string }>();
+  const dateTrackMap = new Map<string, { sessionIds: string[] }>();
+  const sessionLocationMap = new Map<string, string>();
   for (const s of sessions) {
     const date = s.startedAt.toISOString().split("T")[0];
     const key = `${date}|${s.learningTrack}`;
-    if (!dateTrackMap.has(key)) dateTrackMap.set(key, { sessionIds: [], location: s.location });
+    if (!dateTrackMap.has(key)) dateTrackMap.set(key, { sessionIds: [] });
     dateTrackMap.get(key)!.sessionIds.push(s.id);
+    sessionLocationMap.set(s.id, s.location);
   }
 
   const allDates = [...new Set(sessions.map((s) => s.startedAt.toISOString().split("T")[0]))].sort();
@@ -87,10 +89,16 @@ export async function GET(request: Request) {
         continue;
       }
 
-      const applies =
-        entry.location === "Both Campuses" ||
-        entry.location === student.trainingLocation ||
-        student.trainingLocation === "Both Campuses";
+      // A date+track applies to a student if at least one session that day
+      // was for their campus or Both Campuses
+      const applies = entry.sessionIds.some((sid) => {
+        const sessionLocation = sessionLocationMap.get(sid) ?? "Both Campuses";
+        return (
+          sessionLocation === "Both Campuses" ||
+          sessionLocation === student.trainingLocation ||
+          student.trainingLocation === "Both Campuses"
+        );
+      });
 
       if (!applies) {
         attendance[date] = { status: "no-session" };
