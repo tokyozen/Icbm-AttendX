@@ -61,15 +61,16 @@ export async function GET(request: Request) {
 
   const studentIds = students.map((s) => s.id);
   const records = await prisma.attendanceRecord.findMany({
-    where: { studentId: { in: studentIds }, isAbsent: false },
-    select: { studentId: true, sessionId: true, checkInTime: true, verificationStatus: true },
+    where: { studentId: { in: studentIds } },
+    select: { studentId: true, sessionId: true, checkInTime: true, verificationStatus: true, isAbsent: true },
   });
 
-  const recordMap = new Map<string, { checkInTime: Date; verificationStatus: string }>();
+  const recordMap = new Map<string, { checkInTime: Date; verificationStatus: string; isAbsent: boolean }>();
   for (const r of records) {
     recordMap.set(`${r.studentId}|${r.sessionId}`, {
       checkInTime: r.checkInTime,
       verificationStatus: r.verificationStatus,
+      isAbsent: r.isAbsent,
     });
   }
 
@@ -92,8 +93,9 @@ export async function GET(request: Request) {
       const found = entry.sessionIds.map((sid) => recordMap.get(`${student.id}|${sid}`)).find((r) => r !== undefined);
 
       // A date+track applies to a student if at least one session that day
-      // was for their campus or Both Campuses. An actual check-in always counts,
-      // even if the session happened to be tagged to the other campus.
+      // was for their campus or Both Campuses. An explicit record (a check-in or
+      // a manual absence override) always counts, even if the session happened
+      // to be tagged to the other campus.
       const applies =
         !!found ||
         entry.sessionIds.some((sid) => {
@@ -112,7 +114,7 @@ export async function GET(request: Request) {
 
       totalSessions++;
 
-      if (found) {
+      if (found && !found.isAbsent) {
         daysPresent++;
         attendance[date] = {
           status: "present",
@@ -147,7 +149,7 @@ export async function GET(request: Request) {
     summary: {
       totalStudents: students.length,
       totalSessions: allDates.length,
-      totalCheckIns: records.length,
+      totalCheckIns: records.filter((r) => !r.isAbsent).length,
     },
   });
 }
