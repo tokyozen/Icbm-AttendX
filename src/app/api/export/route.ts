@@ -2,52 +2,29 @@ import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import * as XLSX from "xlsx";
+import { buildAttendanceRecordWhere, readAttendanceFilterParams } from "@/lib/attendance-filters";
 
 function formatDateLabel(date: Date): string {
   return date.toLocaleDateString("en-NG", { day: "2-digit", month: "short", year: "numeric" });
 }
 
-function buildWhere(params: URLSearchParams) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const where: Record<string, any> = {};
-  const sessionId = params.get("sessionId");
-  const date = params.get("date");
-  const location = params.get("location");
-  const track = params.get("track");
-  const startDate = params.get("startDate");
-  const endDate = params.get("endDate");
+const STATUS_LABELS: Record<string, string> = {
+  present: "Present",
+  absent: "Absent",
+  verified: "Verified",
+  flagged: "Flagged",
+  pending: "Pending",
+};
 
-  if (sessionId) where.sessionId = sessionId;
-  if (location) where.trainingLocation = location;
-  if (track) where.learningTrack = track;
-
-  if (date) {
-    const day = new Date(date);
-    const next = new Date(day);
-    next.setDate(next.getDate() + 1);
-    where.checkInTime = { gte: day, lt: next };
-  } else if (startDate || endDate) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const range: Record<string, any> = {};
-    if (startDate) range.gte = new Date(startDate);
-    if (endDate) {
-      const end = new Date(endDate);
-      end.setDate(end.getDate() + 1);
-      range.lt = end;
-    }
-    where.checkInTime = range;
-  }
-
-  return where;
-}
-
-function buildFilterDesc(params: URLSearchParams): string {
+async function buildFilterDesc(params: URLSearchParams): Promise<string> {
   const parts: string[] = [];
   const location = params.get("location");
   const track = params.get("track");
   const date = params.get("date");
   const start = params.get("startDate");
   const end = params.get("endDate");
+  const status = params.get("attendanceStatus");
+  const instructorId = params.get("instructorId");
 
   if (location) parts.push(`Location: ${location}`);
   if (track) parts.push(`Track: ${track}`);
@@ -56,6 +33,11 @@ function buildFilterDesc(params: URLSearchParams): string {
     if (start && end) parts.push(`${formatDateLabel(new Date(start))} – ${formatDateLabel(new Date(end))}`);
     else if (start) parts.push(`From: ${formatDateLabel(new Date(start))}`);
     else if (end) parts.push(`To: ${formatDateLabel(new Date(end))}`);
+  }
+  if (status && STATUS_LABELS[status]) parts.push(`Status: ${STATUS_LABELS[status]}`);
+  if (instructorId) {
+    const instructor = await prisma.user.findUnique({ where: { id: instructorId }, select: { name: true } });
+    if (instructor) parts.push(`Facilitator: ${instructor.name}`);
   }
 
   return parts.length ? parts.join(" | ") : "All Records";
@@ -74,12 +56,12 @@ export async function GET(request: Request) {
 
   const { searchParams } = new URL(request.url);
   const format = searchParams.get("format") ?? "csv";
+  const userId = session.user.id as string;
 
-  const where = buildWhere(searchParams);
+  const where = buildAttendanceRecordWhere(readAttendanceFilterParams(searchParams), { role, userId });
 
   const records = await prisma.attendanceRecord.findMany({
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    where: where as any,
+    where,
     include: {
       session: {
         select: { sessionName: true, sessionCode: true, instructor: { select: { name: true } } },
@@ -208,7 +190,7 @@ export async function GET(request: Request) {
 
     const doc = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
 
-    const filterDesc = buildFilterDesc(searchParams);
+    const filterDesc = await buildFilterDesc(searchParams);
     const genTime = new Date().toLocaleString("en-NG", {
       dateStyle: "medium",
       timeStyle: "short",

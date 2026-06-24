@@ -10,6 +10,11 @@ interface SessionOption {
   sessionCode: string;
 }
 
+interface FacilitatorOption {
+  id: string;
+  name: string;
+}
+
 interface AttendanceRow {
   id: string;
   fullName: string;
@@ -17,39 +22,74 @@ interface AttendanceRow {
   learningTrack: string;
   trainingLocation: string;
   checkInTime: string;
+  isAbsent: boolean;
+  verificationStatus: string;
   session: { sessionName: string; location: string };
 }
 
-const QUICK_RANGES = [
-  { label: "Today", getValue: () => ({ startDate: today(), endDate: today() }) },
-  { label: "This Week", getValue: () => ({ startDate: weekStart(), endDate: today() }) },
-  { label: "This Month", getValue: () => ({ startDate: monthStart(), endDate: today() }) },
+interface Summary {
+  totalStudents: number;
+  totalRecords: number;
+  presentRecords: number;
+  absentStudents: number;
+  activeSessions: number;
+  attendanceRate: number;
+}
+
+const ATTENDANCE_STATUS_OPTIONS = [
+  { value: "", label: "All Statuses" },
+  { value: "present", label: "Present" },
+  { value: "absent", label: "Absent" },
+  { value: "verified", label: "Verified" },
+  { value: "flagged", label: "Flagged" },
+  { value: "pending", label: "Pending" },
 ] as const;
 
+function isoDate(d: Date) {
+  return d.toISOString().slice(0, 10);
+}
 function today() {
-  return new Date().toISOString().slice(0, 10);
+  return isoDate(new Date());
 }
-function weekStart() {
+function yesterday() {
   const d = new Date();
-  d.setDate(d.getDate() - d.getDay());
-  return d.toISOString().slice(0, 10);
+  d.setDate(d.getDate() - 1);
+  return isoDate(d);
 }
-function monthStart() {
-  const d = new Date();
-  d.setDate(1);
-  return d.toISOString().slice(0, 10);
+function startOfWeek(d: Date) {
+  const x = new Date(d);
+  x.setDate(x.getDate() - x.getDay());
+  return x;
+}
+function thisWeekRange() {
+  return { startDate: isoDate(startOfWeek(new Date())), endDate: today() };
+}
+function lastWeekRange() {
+  const end = startOfWeek(new Date());
+  end.setDate(end.getDate() - 1);
+  const start = startOfWeek(end);
+  return { startDate: isoDate(start), endDate: isoDate(end) };
+}
+function thisMonthRange() {
+  const start = new Date();
+  start.setDate(1);
+  return { startDate: isoDate(start), endDate: today() };
+}
+function lastMonthRange() {
+  const end = new Date();
+  end.setDate(0); // last day of previous month
+  const start = new Date(end.getFullYear(), end.getMonth(), 1);
+  return { startDate: isoDate(start), endDate: isoDate(end) };
 }
 
-function buildQueryString(filters: Filters, extra?: Record<string, string>) {
-  const params = new URLSearchParams();
-  if (filters.startDate) params.set("startDate", filters.startDate);
-  if (filters.endDate) params.set("endDate", filters.endDate);
-  if (filters.location) params.set("location", filters.location);
-  if (filters.track) params.set("track", filters.track);
-  if (filters.sessionId) params.set("sessionId", filters.sessionId);
-  if (extra) Object.entries(extra).forEach(([k, v]) => params.set(k, v));
-  return params.toString();
-}
+const QUICK_RANGES = [
+  { key: "today", label: "Today", getValue: () => ({ startDate: today(), endDate: today() }) },
+  { key: "yesterday", label: "Yesterday", getValue: () => ({ startDate: yesterday(), endDate: yesterday() }) },
+  { key: "thisWeek", label: "This Week", getValue: thisWeekRange },
+  { key: "lastWeek", label: "Last Week", getValue: lastWeekRange },
+  { key: "thisMonth", label: "This Month", getValue: thisMonthRange },
+  { key: "lastMonth", label: "Last Month", getValue: lastMonthRange },
+] as const;
 
 interface Filters {
   startDate: string;
@@ -57,6 +97,8 @@ interface Filters {
   location: string;
   track: string;
   sessionId: string;
+  attendanceStatus: string;
+  instructorId: string;
 }
 
 const DEFAULT_FILTERS: Filters = {
@@ -65,42 +107,71 @@ const DEFAULT_FILTERS: Filters = {
   location: "",
   track: "",
   sessionId: "",
+  attendanceStatus: "",
+  instructorId: "",
 };
+
+function buildQueryString(filters: Filters, extra?: Record<string, string>) {
+  const params = new URLSearchParams();
+  if (filters.startDate) params.set("startDate", filters.startDate);
+  if (filters.endDate) params.set("endDate", filters.endDate);
+  if (filters.location) params.set("location", filters.location);
+  if (filters.track) params.set("track", filters.track);
+  if (filters.sessionId) params.set("sessionId", filters.sessionId);
+  if (filters.attendanceStatus) params.set("attendanceStatus", filters.attendanceStatus);
+  if (filters.instructorId) params.set("instructorId", filters.instructorId);
+  if (extra) Object.entries(extra).forEach(([k, v]) => params.set(k, v));
+  return params.toString();
+}
 
 export default function ReportsPage() {
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
   const [applied, setApplied] = useState<Filters>(DEFAULT_FILTERS);
+  const [activeQuickRange, setActiveQuickRange] = useState<string | null>(null);
   const [sessions, setSessions] = useState<SessionOption[]>([]);
+  const [facilitators, setFacilitators] = useState<FacilitatorOption[]>([]);
   const [records, setRecords] = useState<AttendanceRow[]>([]);
+  const [summary, setSummary] = useState<Summary | null>(null);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const [downloading, setDownloading] = useState<"csv" | "excel" | "pdf" | null>(null);
 
-  // Fetch session options for the filter dropdown
+  // Filter option sources
   useEffect(() => {
     fetch("/api/sessions?limit=100")
       .then((r) => r.json())
       .then((d) => setSessions(d.sessions ?? []))
       .catch(() => {});
+    fetch("/api/users?status=active")
+      .then((r) => r.json())
+      .then((d) =>
+        setFacilitators(
+          (d.users ?? []).filter((u: { role: string }) => u.role === "INSTRUCTOR")
+        )
+      )
+      .catch(() => {});
   }, []);
 
-  const fetchRecords = useCallback(
-    async (f: Filters, pg: number) => {
-      setLoading(true);
-      const qs = buildQueryString(f, { page: String(pg), limit: "20" });
-      const res = await fetch(`/api/attendance?${qs}`);
-      if (res.ok) {
-        const d = await res.json();
-        setRecords(d.records ?? []);
-        setTotal(d.total ?? 0);
-        setTotalPages(d.totalPages ?? 1);
-      }
-      setLoading(false);
-    },
-    []
-  );
+  const fetchRecords = useCallback(async (f: Filters, pg: number) => {
+    setLoading(true);
+    const qs = buildQueryString(f, { page: String(pg), limit: "20" });
+    const [recordsRes, summaryRes] = await Promise.all([
+      fetch(`/api/attendance?${qs}`),
+      fetch(`/api/attendance/summary?${buildQueryString(f)}`),
+    ]);
+    if (recordsRes.ok) {
+      const d = await recordsRes.json();
+      setRecords(d.records ?? []);
+      setTotal(d.total ?? 0);
+      setTotalPages(d.totalPages ?? 1);
+    }
+    if (summaryRes.ok) {
+      setSummary(await summaryRes.json());
+    }
+    setLoading(false);
+  }, []);
 
   // Initial load — all records
   useEffect(() => {
@@ -116,13 +187,23 @@ export default function ReportsPage() {
   function resetFilters() {
     setFilters(DEFAULT_FILTERS);
     setApplied(DEFAULT_FILTERS);
+    setActiveQuickRange(null);
     setPage(1);
     fetchRecords(DEFAULT_FILTERS, 1);
   }
 
-  function applyQuickRange(startDate: string, endDate: string) {
+  function applyQuickRange(key: string, startDate: string, endDate: string) {
     const next = { ...filters, startDate, endDate };
     setFilters(next);
+    setApplied(next);
+    setActiveQuickRange(key);
+    setPage(1);
+    fetchRecords(next, 1);
+  }
+
+  function handleCustomDateChange(field: "startDate" | "endDate", value: string) {
+    setActiveQuickRange(null);
+    setFilters((p) => ({ ...p, [field]: value }));
   }
 
   async function handleExport(format: "csv" | "excel" | "pdf") {
@@ -156,43 +237,62 @@ export default function ReportsPage() {
         Reports &amp; Exports
       </h1>
 
-      {/* ── Filter panel ── */}
-      <div className="bg-white rounded-xl border p-6 mb-5" style={{ borderColor: "#E2E8F0" }}>
-        <h2 className="text-sm font-semibold mb-4" style={{ color: "#0F1E35" }}>
-          Filters
-        </h2>
+      {/* ── Summary cards ── */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-5">
+        <SummaryCard label="Total Students" value={summary?.totalStudents} color="#0F1E35" />
+        <SummaryCard label="Attendance Records" value={summary?.totalRecords} color="#0E7C7B" />
+        <SummaryCard
+          label="Attendance Rate"
+          value={summary ? `${summary.attendanceRate}%` : undefined}
+          color="#C9922A"
+        />
+        <SummaryCard label="Active Sessions" value={summary?.activeSessions} color="#2563eb" />
+        <SummaryCard label="Absent Students" value={summary?.absentStudents} color="#dc2626" />
+      </div>
 
-        {/* Quick range buttons */}
-        <div className="flex flex-wrap gap-2 mb-4">
+      {/* ── Quick filters ── */}
+      <div className="bg-white rounded-xl border p-6 mb-5" style={{ borderColor: "#E2E8F0" }}>
+        <h2 className="text-sm font-semibold mb-3" style={{ color: "#0F1E35" }}>
+          Quick Filters
+        </h2>
+        <div className="flex flex-wrap gap-2">
           {QUICK_RANGES.map((r) => (
             <button
-              key={r.label}
+              key={r.key}
               onClick={() => {
                 const { startDate, endDate } = r.getValue();
-                applyQuickRange(startDate, endDate);
+                applyQuickRange(r.key, startDate, endDate);
               }}
               className="px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors"
-              style={{ borderColor: "#E2E8F0", color: "#475569" }}
+              style={
+                activeQuickRange === r.key
+                  ? { borderColor: "#0E7C7B", color: "#0E7C7B", backgroundColor: "#0E7C7B1A" }
+                  : { borderColor: "#E2E8F0", color: "#475569" }
+              }
             >
               {r.label}
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 mb-4">
-          <FilterField label="From Date">
+        {/* ── Advanced filters ── */}
+        <h2 className="text-sm font-semibold mt-5 mb-3" style={{ color: "#0F1E35" }}>
+          Advanced Filters
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mb-4">
+          <FilterField label="From Date (Custom Range)">
             <input
               type="date"
               value={filters.startDate}
-              onChange={(e) => setFilters((p) => ({ ...p, startDate: e.target.value }))}
+              onChange={(e) => handleCustomDateChange("startDate", e.target.value)}
               className="filter-input"
             />
           </FilterField>
-          <FilterField label="To Date">
+          <FilterField label="To Date (Custom Range)">
             <input
               type="date"
               value={filters.endDate}
-              onChange={(e) => setFilters((p) => ({ ...p, endDate: e.target.value }))}
+              onChange={(e) => handleCustomDateChange("endDate", e.target.value)}
               className="filter-input"
             />
           </FilterField>
@@ -231,6 +331,29 @@ export default function ReportsPage() {
                 <option key={s.id} value={s.id}>
                   {s.sessionName} ({s.sessionCode})
                 </option>
+              ))}
+            </select>
+          </FilterField>
+          <FilterField label="Attendance Status">
+            <select
+              value={filters.attendanceStatus}
+              onChange={(e) => setFilters((p) => ({ ...p, attendanceStatus: e.target.value }))}
+              className="filter-input"
+            >
+              {ATTENDANCE_STATUS_OPTIONS.map((s) => (
+                <option key={s.value} value={s.value}>{s.label}</option>
+              ))}
+            </select>
+          </FilterField>
+          <FilterField label="Facilitator">
+            <select
+              value={filters.instructorId}
+              onChange={(e) => setFilters((p) => ({ ...p, instructorId: e.target.value }))}
+              className="filter-input"
+            >
+              <option value="">All Facilitators</option>
+              {facilitators.map((f) => (
+                <option key={f.id} value={f.id}>{f.name}</option>
               ))}
             </select>
           </FilterField>
@@ -316,7 +439,7 @@ export default function ReportsPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr style={{ backgroundColor: "#F5F6FA", borderBottom: "1px solid #E2E8F0" }}>
-                    {["Full Name", "Application ID", "Track", "Location", "Session", "Check-In Time"].map((h) => (
+                    {["Full Name", "Application ID", "Track", "Location", "Session", "Check-In Time", "Status"].map((h) => (
                       <th
                         key={h}
                         className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide whitespace-nowrap"
@@ -350,6 +473,9 @@ export default function ReportsPage() {
                       </td>
                       <td className="px-4 py-3 text-xs whitespace-nowrap" style={{ color: "#64748b" }}>
                         {formatDate(r.checkInTime)}, {formatTime(r.checkInTime)}
+                      </td>
+                      <td className="px-4 py-3 text-xs whitespace-nowrap">
+                        <StatusBadge isAbsent={r.isAbsent} verificationStatus={r.verificationStatus} />
                       </td>
                     </tr>
                   ))}
@@ -415,6 +541,41 @@ function FilterField({ label, children }: { label: string; children: React.React
       </label>
       {children}
     </div>
+  );
+}
+
+function SummaryCard({ label, value, color }: { label: string; value: number | string | undefined; color: string }) {
+  return (
+    <div
+      className="bg-white rounded-xl border p-4"
+      style={{ borderColor: "#E2E8F0", borderLeft: `4px solid ${color}` }}
+    >
+      <p className="text-2xl font-extrabold mb-0.5" style={{ color }}>
+        {value === undefined ? "—" : value}
+      </p>
+      <p className="text-xs" style={{ color: "#64748b" }}>{label}</p>
+    </div>
+  );
+}
+
+function StatusBadge({ isAbsent, verificationStatus }: { isAbsent: boolean; verificationStatus: string }) {
+  if (isAbsent) {
+    return (
+      <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap" style={{ backgroundColor: "#fee2e2", color: "#dc2626" }}>
+        Absent
+      </span>
+    );
+  }
+  const map: Record<string, { bg: string; color: string }> = {
+    VERIFIED: { bg: "#dcfce7", color: "#15803d" },
+    FLAGGED: { bg: "#fee2e2", color: "#dc2626" },
+    PENDING: { bg: "#fef9c3", color: "#a16207" },
+  };
+  const s = map[verificationStatus] ?? map.PENDING;
+  return (
+    <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap" style={{ backgroundColor: s.bg, color: s.color }}>
+      {verificationStatus}
+    </span>
   );
 }
 
