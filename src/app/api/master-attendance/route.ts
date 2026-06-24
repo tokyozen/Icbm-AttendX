@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { getDateTrackGroups, resolveDateStatus, type RecordLike } from "@/lib/attendance-status";
 
 function dayLabel(date: Date) {
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -24,28 +25,7 @@ export async function GET(request: Request) {
   // Instructors are always scoped to their own track; admins may optionally filter
   const effectiveTrack = role === "INSTRUCTOR" ? user.learningTrack ?? null : trackParam;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sessionWhere: Record<string, any> = { status: { in: ["CLOSED", "EXPIRED"] } };
-  if (effectiveTrack) sessionWhere.learningTrack = effectiveTrack;
-
-  const sessions = await prisma.trainingSession.findMany({
-    where: sessionWhere,
-    orderBy: { startedAt: "asc" },
-    select: { id: true, learningTrack: true, startedAt: true, location: true },
-  });
-
-  // Deduplicate sessions by date+track — multiple sessions same day/track = one column
-  const dateTrackMap = new Map<string, { sessionIds: string[] }>();
-  const sessionLocationMap = new Map<string, string>();
-  for (const s of sessions) {
-    const date = s.startedAt.toISOString().split("T")[0];
-    const key = `${date}|${s.learningTrack}`;
-    if (!dateTrackMap.has(key)) dateTrackMap.set(key, { sessionIds: [] });
-    dateTrackMap.get(key)!.sessionIds.push(s.id);
-    sessionLocationMap.set(s.id, s.location);
-  }
-
-  const allDates = [...new Set(sessions.map((s) => s.startedAt.toISOString().split("T")[0]))].sort();
+  const { groups, sessionLocationMap, dates: allDates } = await getDateTrackGroups(effectiveTrack ?? undefined);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const studentWhere: Record<string, any> = { isActive: true };
@@ -65,9 +45,10 @@ export async function GET(request: Request) {
     select: { studentId: true, sessionId: true, checkInTime: true, verificationStatus: true, isAbsent: true },
   });
 
-  const recordMap = new Map<string, { checkInTime: Date; verificationStatus: string; isAbsent: boolean }>();
+  const recordsByStudent = new Map<string, Map<string, RecordLike>>();
   for (const r of records) {
-    recordMap.set(`${r.studentId}|${r.sessionId}`, {
+    if (!recordsByStudent.has(r.studentId)) recordsByStudent.set(r.studentId, new Map());
+    recordsByStudent.get(r.studentId)!.set(r.sessionId, {
       checkInTime: r.checkInTime,
       verificationStatus: r.verificationStatus,
       isAbsent: r.isAbsent,
@@ -82,44 +63,29 @@ export async function GET(request: Request) {
 
     let daysPresent = 0;
     let totalSessions = 0;
+    const recordsBySessionId = recordsByStudent.get(student.id) ?? new Map<string, RecordLike>();
 
     for (const date of allDates) {
-      const entry = dateTrackMap.get(`${date}|${student.learningTrack}`);
-      if (!entry) {
-        attendance[date] = { status: "no-session" };
-        continue;
-      }
+      const group = groups.get(`${date}|${student.learningTrack}`);
+      const result = resolveDateStatus({
+        group,
+        sessionLocationMap,
+        trainingLocation: student.trainingLocation,
+        recordsBySessionId,
+      });
 
-      const found = entry.sessionIds.map((sid) => recordMap.get(`${student.id}|${sid}`)).find((r) => r !== undefined);
-
-      // A date+track applies to a student if at least one session that day
-      // was for their campus or Both Campuses. An explicit record (a check-in or
-      // a manual absence override) always counts, even if the session happened
-      // to be tagged to the other campus.
-      const applies =
-        !!found ||
-        entry.sessionIds.some((sid) => {
-          const sessionLocation = sessionLocationMap.get(sid) ?? "Both Campuses";
-          return (
-            sessionLocation === "Both Campuses" ||
-            sessionLocation === student.trainingLocation ||
-            student.trainingLocation === "Both Campuses"
-          );
-        });
-
-      if (!applies) {
+      if (result.status === "no-session") {
         attendance[date] = { status: "no-session" };
         continue;
       }
 
       totalSessions++;
-
-      if (found && !found.isAbsent) {
+      if (result.status === "present") {
         daysPresent++;
         attendance[date] = {
           status: "present",
-          checkInTime: found.checkInTime.toISOString(),
-          verificationStatus: found.verificationStatus,
+          checkInTime: result.record!.checkInTime.toISOString(),
+          verificationStatus: result.record!.verificationStatus,
         };
       } else {
         attendance[date] = { status: "absent" };

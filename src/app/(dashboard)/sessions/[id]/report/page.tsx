@@ -3,6 +3,7 @@ import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { formatDate, formatDateTime, formatTime } from "@/lib/utils";
+import { countRegisteredForSession } from "@/lib/attendance-status";
 import ExportSessionButtons from "@/components/reports/ExportSessionButtons";
 
 export const dynamic = "force-dynamic";
@@ -36,14 +37,13 @@ export default async function SessionReportPage({
     redirect("/sessions");
   }
 
-  // Total registered students for this track + location
-  const totalRegistered = await prisma.student.count({
-    where: {
-      learningTrack: trainingSession.learningTrack,
-      trainingLocation: trainingSession.location,
-      isActive: true,
-    },
-  });
+  // Total registered students for this track + location (campus-aware: a
+  // "Both Campuses" session is measured against every active student on
+  // the track, not a literal "Both Campuses" trainingLocation match)
+  const totalRegistered = await countRegisteredForSession(
+    trainingSession.learningTrack,
+    trainingSession.location
+  );
 
   const checkedIn = trainingSession.attendanceRecords.length;
   const verifiedCount = trainingSession.attendanceRecords.filter(
