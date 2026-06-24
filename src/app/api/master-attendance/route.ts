@@ -89,16 +89,21 @@ export async function GET(request: Request) {
         continue;
       }
 
+      const found = entry.sessionIds.map((sid) => recordMap.get(`${student.id}|${sid}`)).find((r) => r !== undefined);
+
       // A date+track applies to a student if at least one session that day
-      // was for their campus or Both Campuses
-      const applies = entry.sessionIds.some((sid) => {
-        const sessionLocation = sessionLocationMap.get(sid) ?? "Both Campuses";
-        return (
-          sessionLocation === "Both Campuses" ||
-          sessionLocation === student.trainingLocation ||
-          student.trainingLocation === "Both Campuses"
-        );
-      });
+      // was for their campus or Both Campuses. An actual check-in always counts,
+      // even if the session happened to be tagged to the other campus.
+      const applies =
+        !!found ||
+        entry.sessionIds.some((sid) => {
+          const sessionLocation = sessionLocationMap.get(sid) ?? "Both Campuses";
+          return (
+            sessionLocation === "Both Campuses" ||
+            sessionLocation === student.trainingLocation ||
+            student.trainingLocation === "Both Campuses"
+          );
+        });
 
       if (!applies) {
         attendance[date] = { status: "no-session" };
@@ -106,7 +111,6 @@ export async function GET(request: Request) {
       }
 
       totalSessions++;
-      const found = entry.sessionIds.map((sid) => recordMap.get(`${student.id}|${sid}`)).find((r) => r !== undefined);
 
       if (found) {
         daysPresent++;
