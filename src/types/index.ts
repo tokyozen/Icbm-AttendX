@@ -76,6 +76,7 @@ export const LEARNING_TRACKS = [
   "AI & Machine Learning",
   "Business Process & Outsourcing (BPO)",
   "Project Management",
+  "Data Protection Training",
 ] as const;
 
 export const TRAINING_LOCATIONS = [
@@ -86,3 +87,16 @@ export const TRAINING_LOCATIONS = [
 
 export type LearningTrack = (typeof LEARNING_TRACKS)[number];
 export type TrainingLocation = (typeof TRAINING_LOCATIONS)[number];
+
+/**
+ * "Shared" classes are mandatory for every active student regardless of the
+ * track they registered under (e.g. Data Protection Training). Sessions for
+ * these run as combined "Both Campuses" classes, and attendance records are
+ * tagged with the session's track (not the student's) so the class reports
+ * on its own instead of mixing into each student's home track.
+ */
+export const SHARED_TRACKS: readonly string[] = ["Data Protection Training"];
+
+export function isSharedTrack(track: string | null | undefined): boolean {
+  return !!track && SHARED_TRACKS.includes(track);
+}

@@ -621,7 +621,7 @@ export default function ApiDocsPage() {
                   { name: "applicationId", type: "string", required: true, description: "Unique student identifier, e.g. ICBM-2026-0142" },
                   { name: "fullName", type: "string", required: true, description: "Student's full name" },
                   { name: "gender", type: "MALE | FEMALE | OTHER", required: true, description: "Gender enum" },
-                  { name: "learningTrack", type: "string", required: true, description: "One of the five learning tracks" },
+                  { name: "learningTrack", type: "string", required: true, description: "One of the six learning tracks" },
                   { name: "trainingLocation", type: "string", required: true, description: "Abuja, Enugu, or Both Campuses" },
                   { name: "email", type: "string | null", required: false, description: "Contact email" },
                   { name: "phone", type: "string | null", required: false, description: "Contact phone number" },
@@ -672,6 +672,7 @@ export default function ApiDocsPage() {
                     "AI & Machine Learning",
                     "Business Process & Outsourcing (BPO)",
                     "Project Management",
+                    "Data Protection Training",
                   ].map((track) => (
                     <li key={track} className="text-sm flex items-center gap-2" style={{ color: "#334155" }}>
                       <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: TEAL, display: "inline-block" }} />
