@@ -1,6 +1,11 @@
 import "dotenv/config";
-import { defineConfig, env } from "prisma/config";
+import { defineConfig } from "prisma/config";
 
+// Read DATABASE_URL via plain process.env rather than prisma/config's `env()`
+// helper: `env()` validates the variable eagerly at config load, which breaks
+// `prisma generate` during `npm install` on Vercel — env vars are not exposed
+// in the install phase, and generate needs no database URL. The empty fallback
+// keeps this a valid string during generate; migrate/push run with the var set.
 export default defineConfig({
   schema: "prisma/schema.prisma",
   migrations: {
@@ -8,6 +13,6 @@ export default defineConfig({
   },
   engine: "classic",
   datasource: {
-    url: env("DATABASE_URL"),
+    url: process.env.DATABASE_URL ?? "",
   },
 });

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { isSharedTrack } from "@/types/index";
 
 async function requireSuperAdmin() {
   const session = await auth();
@@ -51,7 +52,11 @@ export async function POST(request: Request) {
       fullName: student.fullName,
       gender: student.gender,
       trainingLocation: student.trainingLocation,
-      learningTrack: student.learningTrack,
+      // Shared/mandatory classes are tagged with the session's track so they
+      // report on their own; normal sessions match the student's track anyway.
+      learningTrack: isSharedTrack(trainingSession.learningTrack)
+        ? trainingSession.learningTrack
+        : student.learningTrack,
       checkInTime: trainingSession.startedAt,
       deviceType: "Manual Override",
       verificationStatus: "VERIFIED",

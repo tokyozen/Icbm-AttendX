@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getDeviceType, getBrowser } from "@/lib/utils";
+import { isSharedTrack } from "@/types/index";
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -69,7 +70,13 @@ export async function POST(request: Request) {
         fullName: student.fullName,
         gender: student.gender,
         trainingLocation: student.trainingLocation,
-        learningTrack: student.learningTrack,
+        // For a shared/mandatory class (e.g. Data Protection Training) the
+        // record belongs to the class being attended — the session's track —
+        // not the student's home track. Normal sessions are unchanged since
+        // there the session track already matches the student's.
+        learningTrack: isSharedTrack(session.learningTrack)
+          ? session.learningTrack
+          : student.learningTrack,
         deviceType: getDeviceType(userAgent),
         browser: getBrowser(userAgent),
         ipAddress: ip,
